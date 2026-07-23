@@ -1,0 +1,913 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-07-08",
+  "note": "Codex 조사(01~04 JSON) + Claude 직접 교차검증 병합본. verified=true 항목은 Claude가 원출처 기사로 재확인. 금액 단위: 억원.",
+  "categories": {
+    "corp": "국내 대기업·통신사·플랫폼",
+    "global": "글로벌 빅테크·외국계 오퍼레이터/펀드",
+    "gov": "정부·지자체 메가프로젝트"
+  },
+  "projects": [
+    {
+      "id": "sk-aws-ulsan",
+      "category": "corp",
+      "company": "SK그룹×AWS",
+      "partners": "SKT·SK브로드밴드·SK에코플랜트, 울산시",
+      "project": "울산 AI 데이터센터",
+      "location": "울산 미포국가산단",
+      "capacity_mw": 103,
+      "capacity_note": "1단계 41MW 2027-11, 완전 103MW 2029-02; 이후 1GW급 확장 구상(2025-11)",
+      "investment_krw_bil": 70000,
+      "investment_note": "약 7조원(과기정통부 인용, 약 $5.1bn)",
+      "announced": "2025-06",
+      "construction_start": "2025-08",
+      "target_operation": "2029",
+      "type": "JV·외자유치",
+      "status": "건설중",
+      "confidence": "high",
+      "verified": true,
+      "sources": [
+        {
+          "media": "DCD",
+          "date": "2025-09-01",
+          "url": "https://www.datacenterdynamics.com/en/news/sk-group-and-aws-break-ground-for-data-center-in-ulsan-korea/"
+        },
+        {
+          "media": "DCD",
+          "date": "2025-11-05",
+          "url": "https://www.datacenterdynamics.com/en/news/sk-telecom-plans-tenfold-expansion-for-data-center-in-ulsan-south-korea-plans-to-build-facility-in-vietnam/"
+        }
+      ],
+      "verify_status": "confirmed",
+      "verify_action": "keep",
+      "verify_note": "DCD가 2025-08-29 착공식, 41MW 2027-11, 전체 103MW 2029-02, 과기정통부 확인 7조원 투자를 보도.",
+      "verify_source": {
+        "media": "DCD",
+        "date": "2025-09-01",
+        "url": "https://www.datacenterdynamics.com/en/news/sk-group-and-aws-break-ground-for-data-center-in-ulsan-korea/"
+      },
+      "primary_group": "SK",
+      "also_in": [
+        "AWS"
+      ]
+    },
+    {
+      "id": "skt-15gw-roadmap",
+      "category": "corp",
+      "company": "SKT",
+      "partners": "엔비디아(기가와트급 AI 클라우드 협력)",
+      "project": "AI 인프라 로드맵 (2035년 15GW 발표)",
+      "location": "울산 외 전국",
+      "capacity_mw": 14900,
+      "capacity_note": "2035년까지 총 15GW 로드맵(SKT '아시아 AI 허브'). 울산 1호(0.1GW)는 별도 진행 레코드라 여기선 울산 외 잔여 14.9GW로 계상(합산 시 SK 발표 15.0GW). 15GW는 구상 단계.",
+      "investment_krw_bil": 9930000,
+      "investment_note": "15GW 총투자 약 1,000조원(SK그룹 차원, 2026-06~07 발표; 한경·헤럴드·전자신문). 단 1,000조는 SK 조달목표·업계율(1GW≈70조)×15GW 산술치(공식 공시는 금액 TBD). 1,000조÷15GW≈67조/GW로 울산 68과 부합. 울산(7조·별도 레코드)과 이중계상 피하려 여기선 993조로 계상 → 합산 시 SK 발표 ~1,000조. 2029년까지 5GW 단계.",
+      "announced": "2026-07",
+      "construction_start": null,
+      "target_operation": "2035",
+      "type": "구상·파트너십",
+      "status": "구상",
+      "confidence": "medium",
+      "verified": false,
+      "sources": [
+        {
+          "media": "아시아경제",
+          "date": "2026-07-05",
+          "url": "https://www.asiae.co.kr/article/2026070509003112853"
+        },
+        {
+          "media": "DCD",
+          "date": "2026-06-09",
+          "url": "https://www.datacenterdynamics.com/en/news/sk-telecom-plots-gigawatt-scale-ai-cloud-in-south-korea-with-nvidia/"
+        }
+      ],
+      "verify_status": "partial",
+      "verify_action": "downgrade-confidence",
+      "verify_note": "DCD는 SKT-Nvidia 기가와트급 AI 클라우드와 첫 구축분 2027년 가동 목표, 울산 103MW의 1GW 확장 발표를 확인. 원본의 15GW/2035 로드맵은 이번 검색 내 독립 본문 확인 불가.",
+      "verify_source": {
+        "media": "DCD",
+        "date": "2026-06-09",
+        "url": "https://www.datacenterdynamics.com/en/news/sk-telecom-plots-gigawatt-scale-ai-cloud-in-south-korea-with-nvidia/"
+      },
+      "primary_group": "SK",
+      "also_in": []
+    },
+    {
+      "id": "lgu-paju",
+      "category": "corp",
+      "company": "LG유플러스",
+      "partners": "",
+      "project": "파주 AI 데이터센터(AIDC)",
+      "location": "경기 파주",
+      "capacity_mw": null,
+      "capacity_note": "서버 10만대+ 하이퍼스케일, 연면적 46,013㎡ (통신사 최대)",
+      "investment_krw_bil": 6156,
+      "investment_note": "6,156억(2025-04 공시) + 부지매입 1,053억 별도",
+      "announced": "2025-04",
+      "construction_start": "2025",
+      "target_operation": "2027",
+      "type": "자체투자",
+      "status": "건설중",
+      "confidence": "medium",
+      "verified": true,
+      "sources": [
+        {
+          "media": "전자신문",
+          "date": "2025-04-29",
+          "url": "https://www.etnews.com/20250429000453"
+        },
+        {
+          "media": "이코노믹데일리",
+          "date": "2025-01-30",
+          "url": "https://www.economidaily.com/view/20250130151604496"
+        }
+      ],
+      "verify_status": "partial",
+      "verify_action": "downgrade-confidence",
+      "verify_note": "전자신문은 6156억원 투자와 2027년 준공 목표를 확인. 이코노믹데일리 계열 기사에는 2025년 상반기 착공 예정, 연면적 46013㎡, 서버 10만대 이상으로 보도.",
+      "verify_source": {
+        "media": "전자신문",
+        "date": "2025-04-29",
+        "url": "https://www.etnews.com/20250429000453"
+      },
+      "primary_group": "LG",
+      "also_in": []
+    },
+    {
+      "id": "naver-sejong",
+      "category": "corp",
+      "company": "네이버",
+      "partners": "네이버클라우드",
+      "project": "각 세종 2·3단계 동시 증설",
+      "location": "세종",
+      "capacity_mw": 270,
+      "capacity_note": "최대 설계전력 270MW, 서버 60만 유닛(기존 3배, 총 6단계); 엔비디아 블랙웰 6만장 공급 발표. 2·3단계 2025년 말 착공→2027·2029 추가 오픈",
+      "investment_krw_bil": null,
+      "investment_note": "투자액 미공개",
+      "announced": "2025-10",
+      "construction_start": "2025-12",
+      "target_operation": "2029",
+      "type": "자체투자",
+      "status": "착공",
+      "confidence": "medium",
+      "verified": true,
+      "sources": [
+        {
+          "media": "전자신문",
+          "date": "2025-10-28",
+          "url": "https://www.etnews.com/20251028000113"
+        },
+        {
+          "media": "한국경제",
+          "date": "2025-11-10",
+          "url": "https://www.hankyung.com/article/2025111034931"
+        }
+      ],
+      "verify_status": "partial",
+      "verify_action": "update-field",
+      "verify_note": "전자신문은 2·3단계 공사를 2025년 연말 시작, 2027년과 2029년 추가 오픈, 총 6단계 270MW라고 보도.",
+      "verify_source": {
+        "media": "전자신문",
+        "date": "2025-10-28",
+        "url": "https://www.etnews.com/20251028000113"
+      },
+      "primary_group": "NAVER",
+      "also_in": []
+    },
+    {
+      "id": "kakao-namyangju",
+      "category": "corp",
+      "company": "카카오",
+      "partners": "",
+      "project": "제2데이터센터(디지털 허브)",
+      "location": "남양주 왕숙",
+      "capacity_mw": null,
+      "capacity_note": "연면적 약 9.2만㎡ — 안산(4.7만㎡)의 2배, AI 고집적 서버 대응",
+      "investment_krw_bil": 6000,
+      "investment_note": "",
+      "announced": "2025-06",
+      "construction_start": "2026",
+      "target_operation": "2029",
+      "type": "자체투자",
+      "status": "인허가",
+      "confidence": "high",
+      "verified": true,
+      "sources": [
+        {
+          "media": "전자신문",
+          "date": "2025-06-13",
+          "url": "https://www.etnews.com/20250613000142"
+        },
+        {
+          "media": "아시아경제",
+          "date": "2025-06-13",
+          "url": "https://cm.asiae.co.kr/article/2025061308304411177"
+        }
+      ],
+      "verify_status": "confirmed",
+      "verify_action": "keep",
+      "verify_note": "아시아경제는 남양주 왕숙 디지털 허브 MOU, 최대 6000억원, 2026년 착공, 2029년 준공 목표를 확인.",
+      "verify_source": {
+        "media": "아시아경제",
+        "date": "2025-06-13",
+        "url": "https://cm.asiae.co.kr/article/2025061308304411177"
+      },
+      "primary_group": "KAKAO",
+      "also_in": []
+    },
+    {
+      "id": "kakao-ansan",
+      "category": "corp",
+      "company": "카카오",
+      "partners": "한양대 에리카캠퍼스",
+      "project": "카카오 데이터센터 안산",
+      "location": "안산",
+      "capacity_mw": null,
+      "capacity_note": "서버 12만대, 데이터센터 면적 4.7만㎡",
+      "investment_krw_bil": 4000,
+      "investment_note": "2020 계획 기준 약 4,000억",
+      "announced": "2020",
+      "construction_start": "2021",
+      "target_operation": "2024",
+      "type": "자체투자",
+      "status": "가동",
+      "confidence": "medium",
+      "verified": false,
+      "sources": [
+        {
+          "media": "DCD",
+          "date": "2024-06-14",
+          "url": "https://www.datacenterdynamics.com/en/news/south-koreas-kakao-launches-data-center-in-ansan/"
+        }
+      ],
+      "verify_status": "partial",
+      "verify_action": "downgrade-confidence",
+      "verify_note": "DCD는 2024년 공식 론칭, 2023년 9월 공사 완료, 2021년 부분 개방, 4000억원 투자 발표를 확인. 원본 construction_start=2021은 '부분 개방'과 혼재 가능.",
+      "verify_source": {
+        "media": "DCD",
+        "date": "2024-06-14",
+        "url": "https://www.datacenterdynamics.com/en/news/south-koreas-kakao-launches-data-center-in-ansan/"
+      },
+      "primary_group": "KAKAO",
+      "also_in": []
+    },
+    {
+      "id": "sds-dongtan",
+      "category": "corp",
+      "company": "삼성SDS",
+      "partners": "",
+      "project": "동탄 HPC 데이터센터(동관+서관)",
+      "location": "화성 동탄",
+      "capacity_mw": 40,
+      "capacity_note": "동관 20MW(2023 준공)+서관 20MW(2026 Q1 가동), HPC 전용",
+      "investment_krw_bil": 3008,
+      "investment_note": "동탄 누적 집행 3,008억",
+      "announced": "2021",
+      "construction_start": "2022",
+      "target_operation": "2026",
+      "type": "자체투자",
+      "status": "가동",
+      "confidence": "high",
+      "verified": true,
+      "sources": [
+        {
+          "media": "디일렉",
+          "date": "2026",
+          "url": "https://www.thelec.kr/news/articleView.html?idxno=53349"
+        }
+      ],
+      "verify_status": "confirmed",
+      "verify_action": "keep",
+      "verify_note": "디일렉은 동탄 동관+서관 각각 20MW, 총 40MW, 2026년 1분기 서관 가동, 2025년 말까지 3008억원 지출을 보도.",
+      "verify_source": {
+        "media": "디일렉",
+        "date": "2026-03-11",
+        "url": "https://www.thelec.kr/news/articleView.html?idxno=53349"
+      },
+      "primary_group": "SAMSUNG",
+      "also_in": []
+    },
+    {
+      "id": "sds-gumi",
+      "category": "corp",
+      "company": "삼성SDS",
+      "partners": "",
+      "project": "구미 AI 데이터센터",
+      "location": "경북 구미",
+      "capacity_mw": 60,
+      "capacity_note": "수십 MW급; 해남·구미·동탄 3거점 3.7조 계획의 하나",
+      "investment_krw_bil": 4639,
+      "investment_note": "사업보고서 기준 4,639억(디일렉 2026-03, 최신). 2026-01 공시 시점엔 4,273억으로 보도.",
+      "announced": "2026-01",
+      "construction_start": "2026",
+      "target_operation": "2029",
+      "type": "자체투자",
+      "status": "착공",
+      "confidence": "high",
+      "verified": true,
+      "sources": [
+        {
+          "media": "전자신문",
+          "date": "2026-01-03",
+          "url": "https://www.etnews.com/20260103000033"
+        },
+        {
+          "media": "TBC",
+          "date": "2026",
+          "url": "https://www.tbc.co.kr/news/view?id=200878"
+        }
+      ],
+      "verify_status": "conflicting",
+      "verify_action": "update-field",
+      "verify_note": "전자신문은 2026-01 공시 기준 4273억원을 보도했으나, 더 최신인 디일렉 2026-03 보도는 사업보고서 기준 총투자 4639억원, 60MW, 2029년까지 확장으로 업데이트.",
+      "verify_source": {
+        "media": "디일렉",
+        "date": "2026-03-11",
+        "url": "https://www.thelec.kr/news/articleView.html?idxno=53349"
+      },
+      "primary_group": "SAMSUNG",
+      "also_in": []
+    },
+    {
+      "id": "kt-aidc-plan",
+      "category": "corp",
+      "company": "KT",
+      "partners": "KT클라우드(합병 추진)",
+      "project": "AIDC 전국 25개소 신규 구축 계획",
+      "location": "전국(수도권+비수도권)",
+      "capacity_mw": 1000,
+      "capacity_note": "5년간 총 1GW 확보 목표",
+      "investment_krw_bil": 50000,
+      "investment_note": "5년간 5조(18조 AX 투자 중 AIDC 몫)",
+      "announced": "2026-07",
+      "construction_start": null,
+      "target_operation": "2031",
+      "type": "자체투자 계획",
+      "status": "계획",
+      "confidence": "high",
+      "verified": true,
+      "sources": [
+        {
+          "media": "이데일리",
+          "date": "2026-07-06",
+          "url": "https://edaily.co.kr/News/Read?mediaCodeNo=257&newsId=03562086645511896"
+        },
+        {
+          "media": "전자신문",
+          "date": "2026-07-06",
+          "url": "https://www.etnews.com/20260706000309"
+        }
+      ],
+      "verify_status": "confirmed",
+      "verify_action": "keep",
+      "verify_note": "전자신문은 KT가 5년간 5조원을 투입해 총 1GW AIDC, 전국 25곳 정도 신규 구축 계획이라고 보도.",
+      "verify_source": {
+        "media": "전자신문",
+        "date": "2026-07-06",
+        "url": "https://www.etnews.com/20260706000309"
+      },
+      "primary_group": "KT",
+      "also_in": []
+    },
+    {
+      "id": "aws-region",
+      "category": "global",
+      "company": "AWS",
+      "partners": "",
+      "project": "한국 리전 인프라 증설(인천 서구 신축 포함)",
+      "location": "서울/인천 서구",
+      "capacity_mw": null,
+      "capacity_note": "서울 리전 4개 AZ 운영 중",
+      "investment_krw_bil": null,
+      "investment_note": "기존 $4bn에 $5bn 추가 보도(원화 미환산)",
+      "announced": "2025-10",
+      "construction_start": null,
+      "target_operation": null,
+      "type": "자체투자",
+      "status": "건설중",
+      "confidence": "medium",
+      "verified": false,
+      "sources": [
+        {
+          "media": "DCD",
+          "date": "2025-11-05",
+          "url": "https://www.datacenterdynamics.com/en/news/sk-telecom-plans-tenfold-expansion-for-data-center-in-ulsan-south-korea-plans-to-build-facility-in-vietnam/"
+        }
+      ],
+      "verify_status": "partial",
+      "verify_action": "downgrade-confidence",
+      "verify_note": "DCD는 AWS가 서울 리전을 운영 중이며 인천 서구 데이터센터를 건설 중이라고 언급하고, 별도 기사에서 한국 데이터센터 투자 확대를 보도. 개별 프로젝트별 MW/Capex/준공시점은 확인되지 않음.",
+      "verify_source": {
+        "media": "DCD",
+        "date": "2025-09-01",
+        "url": "https://www.datacenterdynamics.com/en/news/sk-group-and-aws-break-ground-for-data-center-in-ulsan-korea/"
+      },
+      "primary_group": "AWS",
+      "also_in": []
+    },
+    {
+      "id": "openai-stargate",
+      "category": "global",
+      "company": "OpenAI",
+      "partners": "삼성전자·삼성물산·삼성중공업·SK하이닉스·SKT",
+      "project": "스타게이트 코리아(검토)",
+      "location": "미정(포항·전남 후보 보도)",
+      "capacity_mw": null,
+      "capacity_note": "부유식 데이터센터 기술 협력 포함, 용량 미공개",
+      "investment_krw_bil": null,
+      "investment_note": "",
+      "announced": "2025-10",
+      "construction_start": null,
+      "target_operation": null,
+      "type": "MOU",
+      "status": "MOU",
+      "confidence": "medium",
+      "verified": false,
+      "sources": [
+        {
+          "media": "AP",
+          "date": "2025-10-01",
+          "url": "https://apnews.com/article/south-korea-openai-samsung-sk-stargate-a65fd1a21a8587c991cc30b94b1dfe89"
+        }
+      ],
+      "verify_status": "partial",
+      "verify_action": "downgrade-confidence",
+      "verify_note": "AP는 OpenAI가 SKT와 한국 내 AI 데이터센터 'Stargate Korea' 건설을 탐색하는 별도 합의, 삼성 계열과 데이터센터 기술 협력 합의를 맺었다고 보도. 확정 투자·입지·용량·착공시점은 없음.",
+      "verify_source": {
+        "media": "AP",
+        "date": "2025-10-01",
+        "url": "https://apnews.com/article/south-korea-openai-samsung-sk-stargate-a65fd1a21a8587c991cc30b94b1dfe89"
+      },
+      "primary_group": "GLOBAL",
+      "also_in": [
+        "SK",
+        "SAMSUNG"
+      ]
+    },
+    {
+      "id": "equinix-sl2x",
+      "category": "global",
+      "company": "Equinix",
+      "partners": "",
+      "project": "SL2x xScale (SL4 IBX 포함)",
+      "location": "고양 덕양구",
+      "capacity_mw": 22,
+      "capacity_note": "xScale 22MW(자사 페이지 기준, 24MW 표기 혼재)",
+      "investment_krw_bil": null,
+      "investment_note": "",
+      "announced": "2024",
+      "construction_start": null,
+      "target_operation": "2024",
+      "type": "자체투자",
+      "status": "가동",
+      "confidence": "high",
+      "verified": false,
+      "sources": [
+        {
+          "media": "Equinix",
+          "date": "2026-07-08",
+          "url": "https://www.equinix.com/data-centers/asia-pacific-colocation/korea-colocation/seoul-data-center/sl2x"
+        }
+      ],
+      "verify_status": "confirmed",
+      "verify_action": "keep",
+      "verify_note": "Equinix 공식 SL2x 페이지는 고양 덕양구 주소, 2024년 오픈 예정, 22MW, SL4가 SL2x 내부에 위치한다고 명시.",
+      "verify_source": {
+        "media": "Equinix",
+        "date": "2026-07-08",
+        "url": "https://www.equinix.com/data-centers/asia-pacific-colocation/korea-colocation/seoul-data-center/sl2x"
+      },
+      "primary_group": "COLO",
+      "also_in": []
+    },
+    {
+      "id": "stt-seoul1",
+      "category": "global",
+      "company": "STT GDC",
+      "partners": "효성중공업(지분 40%)",
+      "project": "STT Seoul 1",
+      "location": "서울",
+      "capacity_mw": 30,
+      "capacity_note": "IT부하 30MW, 연면적 약 4만㎡",
+      "investment_krw_bil": null,
+      "investment_note": "",
+      "announced": "2024",
+      "construction_start": null,
+      "target_operation": "2026-06",
+      "type": "JV",
+      "status": "가동",
+      "confidence": "high",
+      "verified": false,
+      "sources": [
+        {
+          "media": "DCD",
+          "date": "2026-06-18",
+          "url": "https://www.datacenterdynamics.com/en/news/stt-gdc-launches-data-center-in-seoul-south-korea/"
+        }
+      ],
+      "verify_status": "confirmed",
+      "verify_action": "keep",
+      "verify_note": "DCD는 STT Seoul 1이 2026년 6월 완전 상업 운영을 시작했고, 가산동 소재 30MW IT load 시설이라고 보도.",
+      "verify_source": {
+        "media": "DCD",
+        "date": "2026-06-18",
+        "url": "https://www.datacenterdynamics.com/en/news/stt-gdc-launches-data-center-in-seoul-south-korea/"
+      },
+      "primary_group": "COLO",
+      "also_in": []
+    },
+    {
+      "id": "digitaledge-bupyeong",
+      "category": "global",
+      "company": "Digital Edge",
+      "partners": "Stonepeak",
+      "project": "인천 부평 캠퍼스 SEL2·SEL3",
+      "location": "인천 부평",
+      "capacity_mw": 96,
+      "capacity_note": "SEL2 36MW 가동(2024-10)+SEL3 60MW(2025-05 착공, 2027 Q4 목표)",
+      "investment_krw_bil": null,
+      "investment_note": "APAC 포트폴리오 $575M 파이낸싱 일부",
+      "announced": "2024-10",
+      "construction_start": "2025-05",
+      "target_operation": "2027",
+      "type": "펀드개발",
+      "status": "일부가동",
+      "confidence": "high",
+      "verified": false,
+      "sources": [
+        {
+          "media": "Digital Edge",
+          "date": "2026-07-08",
+          "url": "https://www.digitaledgedc.com/products-services/data-centers/south-korea/"
+        },
+        {
+          "media": "DCD",
+          "date": "2026-05-26",
+          "url": "https://www.datacenterdynamics.com/en/news/digital-edge-secures-575m-financing-for-apac-data-centers/"
+        }
+      ],
+      "verify_status": "confirmed",
+      "verify_action": "keep",
+      "verify_note": "Digital Edge 공식 한국 페이지는 부평 SEL2&SEL3 총 96MW, SEL2 36MW, SEL3 60MW, SEL3 공사 2025-05 착수, Q4 2027 ready를 명시.",
+      "verify_source": {
+        "media": "Digital Edge",
+        "date": "2026-07-08",
+        "url": "https://www.digitaledgedc.com/products-services/data-centers/south-korea/"
+      },
+      "primary_group": "COLO",
+      "also_in": []
+    },
+    {
+      "id": "digitaledge-sel5",
+      "category": "global",
+      "company": "Digital Edge",
+      "partners": "Stonepeak",
+      "project": "SEL5 안산",
+      "location": "안산",
+      "capacity_mw": 60,
+      "capacity_note": "90MVA 전력계약 확보 부지 인수",
+      "investment_krw_bil": null,
+      "investment_note": "",
+      "announced": "2026-06",
+      "construction_start": null,
+      "target_operation": null,
+      "type": "펀드개발",
+      "status": "인허가",
+      "confidence": "medium",
+      "verified": false,
+      "sources": [
+        {
+          "media": "Digital Edge",
+          "date": "2026-06-08",
+          "url": "https://www.digitaledgedc.com/resources/newsroom/digital-edge-secures-power-60mw-ansan-data-center/"
+        }
+      ],
+      "verify_status": "partial",
+      "verify_action": "downgrade-confidence",
+      "verify_note": "Digital Edge 공식 보도자료는 안산 SEL5를 90MVA 전력계약이 뒷받침된 60MW AI-ready 데이터센터로 개발한다고 확인. 착공/준공 시점은 공개하지 않음.",
+      "verify_source": {
+        "media": "Digital Edge",
+        "date": "2026-06-08",
+        "url": "https://www.digitaledgedc.com/resources/newsroom/digital-edge-secures-power-60mw-ansan-data-center/"
+      },
+      "primary_group": "COLO",
+      "also_in": []
+    },
+    {
+      "id": "pdg-incheon",
+      "category": "global",
+      "company": "Princeton Digital Group",
+      "partners": "",
+      "project": "SE1 인천 캠퍼스",
+      "location": "인천",
+      "capacity_mw": 48,
+      "capacity_note": "한국 500MW 구축 계획의 1단계",
+      "investment_krw_bil": 9800,
+      "investment_note": "$700M(약 9,800억, 환율 1,400 기준 환산)",
+      "announced": "2025-11",
+      "construction_start": "2025-11",
+      "target_operation": "2028",
+      "type": "자체개발",
+      "status": "착공",
+      "confidence": "high",
+      "verified": false,
+      "sources": [
+        {
+          "media": "PDG",
+          "date": "2025-11-17",
+          "url": "https://princetondg.com/newsroom/pdg-enters-south-korea-with-usd-700-million-data-center-investment/"
+        }
+      ],
+      "verify_status": "confirmed",
+      "verify_action": "keep",
+      "verify_note": "PDG 공식 보도자료는 USD 700m 투자, 인천 SE1 48MW, 2025-11 말 착공, 2028년 초 서비스 준비 예정이라고 명시. 원화 환산 9800억원은 약식 환산치.",
+      "verify_source": {
+        "media": "PDG",
+        "date": "2025-11-17",
+        "url": "https://princetondg.com/newsroom/pdg-enters-south-korea-with-usd-700-million-data-center-investment/"
+      },
+      "primary_group": "COLO",
+      "also_in": []
+    },
+    {
+      "id": "keppel-ansan",
+      "category": "global",
+      "company": "Keppel (KDCF III)",
+      "partners": "신영증권·NH증권·현대건설(합산 27%)",
+      "project": "안산 AI-ready 데이터센터",
+      "location": "안산",
+      "capacity_mw": 60,
+      "capacity_note": "Tier III, 그린필드; 인허가·전력 승인 확보",
+      "investment_krw_bil": null,
+      "investment_note": "",
+      "announced": "2026-06",
+      "construction_start": null,
+      "target_operation": "2030",
+      "type": "펀드개발",
+      "status": "인허가",
+      "confidence": "high",
+      "verified": false,
+      "sources": [
+        {
+          "media": "DCD",
+          "date": "2026-06-09",
+          "url": "https://www.datacenterdynamics.com/en/news/keppel-to-enter-south-korean-data-center-market-plans-60mw-facility-in-seoul/"
+        }
+      ],
+      "verify_status": "confirmed",
+      "verify_action": "keep",
+      "verify_note": "DCD는 Keppel KDCF III가 안산 60MW 그린필드 부지를 확보했고 건설허가와 전력승인을 확보했으며 2030년 서비스 준비 예정이라고 보도.",
+      "verify_source": {
+        "media": "DCD",
+        "date": "2026-06-09",
+        "url": "https://www.datacenterdynamics.com/en/news/keppel-to-enter-south-korean-data-center-market-plans-60mw-facility-in-seoul/"
+      },
+      "primary_group": "COLO",
+      "also_in": []
+    },
+    {
+      "id": "pacific-jukjeon",
+      "category": "global",
+      "company": "퍼시픽자산운용",
+      "partners": "CPPIB·신한투자증권(8,280억 투자), 시공 현대건설",
+      "project": "죽전 퍼시픽써니 데이터센터",
+      "location": "용인 죽전",
+      "capacity_mw": 64,
+      "capacity_note": "IT부하 64MW, 연면적 9.9만㎡ — 준공 기준 국내 최대; 네이버·AWS 임차 100%",
+      "investment_krw_bil": 13000,
+      "investment_note": "총사업비 약 1.3조",
+      "announced": "2022",
+      "construction_start": "2022",
+      "target_operation": "2025",
+      "type": "펀드개발",
+      "status": "가동",
+      "confidence": "high",
+      "verified": true,
+      "sources": [
+        {
+          "media": "이데일리",
+          "date": "2025-08-15",
+          "url": "https://marketin.edaily.co.kr/News/Read?newsId=02460006642267648"
+        },
+        {
+          "media": "현대건설",
+          "date": "2025-10-24",
+          "url": "https://www.hdec.kr/kr/newsroom/news_view.aspx?NewsSeq=1368&NewsType=LATEST&NewsListType=news_clist"
+        }
+      ],
+      "verify_status": "confirmed",
+      "verify_action": "keep",
+      "verify_note": "현대건설 공식 뉴스룸은 용인 죽전 퍼시픽써니 데이터센터 준공, 총 1조3000억원, IT Load 64MW, 2022년 2월 착공 후 약 43개월 만에 준공을 확인.",
+      "verify_source": {
+        "media": "현대건설",
+        "date": "2025-10-24",
+        "url": "https://www.hdec.kr/kr/newsroom/news_view.aspx?NewsSeq=1368&NewsType=LATEST&NewsListType=news_clist"
+      },
+      "primary_group": "COLO",
+      "also_in": []
+    },
+    {
+      "id": "nac-haenam",
+      "category": "gov",
+      "company": "국가 AI컴퓨팅센터",
+      "partners": "삼성SDS(주관)·네이버클라우드·삼성물산·카카오·삼성전자·클러쉬·KT·전라남도·서남해안기업도시개발",
+      "project": "국가 AI컴퓨팅센터(민관 SPC)",
+      "location": "전남 해남 솔라시도",
+      "capacity_mw": 210,
+      "capacity_note": "210MW는 삼성 발표 기준 국가 AI DC 규모(뉴스핌 2026-07). 2.5조 1단계 공식 사업비 보도엔 MW 미명시, GPU·NPU 1.5만장(2028)만 확인 — MW는 참고치.",
+      "investment_krw_bil": 25000,
+      "investment_note": "총 2.5조; 초기 자본금 4,000억(공공 1,160억+민간 2,840억), 정부 지분 30% 미만",
+      "announced": "2025-02",
+      "construction_start": "2026-Q3",
+      "target_operation": "2028",
+      "type": "정부·민간 SPC",
+      "status": "착공예정",
+      "confidence": "medium",
+      "verified": true,
+      "sources": [
+        {
+          "media": "ZDNet",
+          "date": "2026-03-10",
+          "url": "https://zdnet.co.kr/view/?no=20260310171011"
+        },
+        {
+          "media": "아시아경제",
+          "date": "2026-05-11",
+          "url": "https://www.asiae.co.kr/en/article/2026051117073960678"
+        }
+      ],
+      "verify_status": "partial",
+      "verify_action": "downgrade-confidence",
+      "verify_note": "아시아경제는 과기정통부가 삼성SDS 컨소시엄을 최종 사업자로 확정했고 2026년 3분기 착공, 총 2.5조원, 2028년까지 1.5만 AI 반도체 구축 계획을 보도. 210MW는 같은 2.5조 사업의 공식 수치로 확인되지 않고, 2026-07 뉴스핌의 17조 확장 보도에 등장함.",
+      "verify_source": {
+        "media": "아시아경제",
+        "date": "2026-05-11",
+        "url": "https://www.asiae.co.kr/en/article/2026051117073960678"
+      },
+      "primary_group": "GOV",
+      "also_in": [
+        "SAMSUNG",
+        "KT"
+      ]
+    },
+    {
+      "id": "solaseado-park",
+      "category": "gov",
+      "company": "솔라시도 데이터센터 파크",
+      "partners": "BS그룹(보성)·TGK·삼성물산·LG CNS 등 MOU, 전라남도·해남군",
+      "project": "AI 데이터센터 파크(최대 3GW 구상)",
+      "location": "전남 해남 솔라시도",
+      "capacity_mw": 3000,
+      "capacity_note": "SFR 최대 3GW MOU; 한전 전력계통영향평가 미신청 단계(2025-02 기준)",
+      "investment_krw_bil": 150000,
+      "investment_note": "SFR 3GW MOU 약 15조(전자신문 2025-02). 삼성 주도 국가 AI DC 확장은 별도 17조·210MW 보도(뉴스핌 2026-07) — 원래 한 행에 혼재되어 있던 것을 분리·정정.",
+      "announced": "2023-08",
+      "construction_start": null,
+      "target_operation": "2028",
+      "type": "외자·민자 유치",
+      "status": "MOU",
+      "confidence": "low",
+      "verified": true,
+      "sources": [
+        {
+          "media": "뉴스핌",
+          "date": "2026-07-03",
+          "url": "https://www.newspim.com/news/view/20260703000559"
+        },
+        {
+          "media": "전자신문",
+          "date": "2025-02-19",
+          "url": "https://www.etnews.com/20250219000255"
+        }
+      ],
+      "verify_status": "conflicting",
+      "verify_action": "flag-remove",
+      "verify_note": "전자신문의 3GW SFR 프로젝트는 전남과 MOU, 약 15조원, 2025년 겨울 착공·2028년 완공 목표였으나 한전 전력계통영향평가 신청도 없었다고 보도. 2026-07 뉴스핌의 17조원은 3GW가 아니라 삼성 주도 210MW 국가 AI 데이터센터 확장 보도임.",
+      "verify_source": {
+        "media": "전자신문",
+        "date": "2025-02-19",
+        "url": "https://www.etnews.com/20250219000255"
+      },
+      "primary_group": "GOV",
+      "also_in": []
+    },
+    {
+      "id": "gwangju-nhn",
+      "category": "gov",
+      "company": "광주 국가AI데이터센터",
+      "partners": "광주시·AI산업융합사업단, 운영 NHN클라우드",
+      "project": "국가AI데이터센터(AI 집적단지)",
+      "location": "광주 북구",
+      "capacity_mw": null,
+      "capacity_note": "88.5PF급 AI 연산자원, 2023-11 개소·가동 중; 확장 논의",
+      "investment_krw_bil": null,
+      "investment_note": "확장분 투자액 미확정",
+      "announced": "2021",
+      "construction_start": "2022",
+      "target_operation": "2023",
+      "type": "재정+민간 운영",
+      "status": "가동",
+      "confidence": "low",
+      "verified": false,
+      "sources": [
+        {
+          "media": "AI산업융합사업단",
+          "date": "2026-07-08",
+          "url": "https://www.aica-gj.kr/"
+        }
+      ],
+      "verify_status": "unverifiable",
+      "verify_action": "downgrade-confidence",
+      "verify_note": "기록된 AICA 홈페이지는 자동등록방지 보안절차만 노출되어 본문 검증 불가. 제한된 검색 예산 내에서 2022 착공/2023 가동을 직접 확인하는 독립 본문을 확보하지 못함.",
+      "verify_source": {
+        "media": "AI산업융합사업단",
+        "date": "2026-07-08",
+        "url": "https://www.aica-gj.kr/"
+      },
+      "primary_group": "GOV",
+      "also_in": []
+    },
+    {
+      "id": "gs-donghae",
+      "category": "corp",
+      "company": "㈜GS (GS그룹)",
+      "partners": "전담 GS AI인프라; 건설 GS건설·자이C&A·디씨브릿지; 전력 GS동해전력·GS EPS·GS파워·GS E&R; 냉각 GS칼텍스",
+      "project": "동해 AI 데이터센터 (2.4GW)",
+      "location": "강원 동해 북평2산단",
+      "capacity_mw": 2400,
+      "capacity_note": "1단계 1.2GW(2028)+2단계 1.2GW(2029), 총 2.4GW; 부지 약 18만평(2022 조성완료)",
+      "investment_krw_bil": 300000,
+      "investment_note": "직접투자비 약 30조원; GPU·메모리 포함 최대 120조 추산",
+      "announced": "2026-06",
+      "construction_start": null,
+      "target_operation": "2029",
+      "type": "정부 낙점·민간 SPC",
+      "status": "계획",
+      "confidence": "high",
+      "verified": true,
+      "sources": [
+        {
+          "media": "ZDNet",
+          "date": "2026-06-29",
+          "url": "https://zdnet.co.kr/view/?no=20260629165024"
+        },
+        {
+          "media": "녹색경제신문",
+          "date": "2026-07-01",
+          "url": "https://greened.kr/news/articleView.html?idxno=344212"
+        }
+      ],
+      "verify_status": "confirmed",
+      "verify_action": "add",
+      "verify_note": "Codex GS조사가 놓친 것을 Opus 독립검증으로 발견·추가. 정부 메가프로젝트 낙점, GS AI인프라 SPC 설립. 1단계 1.2GW 2028, 총 2.4GW 2029, 직접투자 30조.",
+      "verify_source": {
+        "media": "ZDNet",
+        "date": "2026-06-29",
+        "url": "https://zdnet.co.kr/view/?no=20260629165024"
+      },
+      "primary_group": "GS",
+      "also_in": []
+    },
+    {
+      "id": "gs-epoq-anyang",
+      "category": "corp",
+      "company": "GS건설",
+      "partners": "",
+      "project": "에포크(EPOQ) 안양 센터",
+      "location": "안양 동안구 호계동",
+      "capacity_mw": 40,
+      "capacity_note": "지하3~지상9층, 서버 10만대+ 하이퍼스케일; GS건설 자체 DC 브랜드 EPOQ(건설사 최초 자체 개발사업)",
+      "investment_krw_bil": null,
+      "investment_note": "투자액 미공개",
+      "announced": "2024-01",
+      "construction_start": null,
+      "target_operation": "2024",
+      "type": "자체개발",
+      "status": "가동",
+      "confidence": "medium",
+      "verified": true,
+      "sources": [
+        {
+          "media": "한국건설신문",
+          "date": "2024-01-24",
+          "url": "http://www.conslove.co.kr/news/articleView.html?idxno=80216"
+        },
+        {
+          "media": "한국금융신문",
+          "date": "2024-01-24",
+          "url": "https://www.fntimes.com/html/view.php?ud=202401241023053226b372994c95_18"
+        }
+      ],
+      "verify_status": "confirmed",
+      "verify_action": "add",
+      "verify_note": "Opus 독립검증으로 추가. GS건설 자체 DC 브랜드 EPOQ, 안양 40MW, 2024-01 준공. 단순 시공이 아닌 자체 개발사업 역할.",
+      "verify_source": {
+        "media": "한국건설신문",
+        "date": "2024-01-24",
+        "url": "http://www.conslove.co.kr/news/articleView.html?idxno=80216"
+      },
+      "primary_group": "GS",
+      "also_in": []
+    }
+  ]
+}
