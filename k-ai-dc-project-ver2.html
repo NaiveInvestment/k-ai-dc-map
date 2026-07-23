@@ -277,7 +277,6 @@
   .hchart { position:relative; }
   .hax { position:relative; height:20px; border-bottom:2px solid #444; margin-left:150px; }
   .hax .tick { position:absolute; bottom:2px; transform:translateX(-50%); font-size:12px; color:#333; }
-  .hax .tick:last-child { transform:translateX(-100%); }
   .hrow { display:flex; align-items:center; height:40px; }
   .hname { width:150px; font-size:13px; text-align:right; padding-right:8px; color:#222; line-height:1.25; }
   .hname .sub { display:block; font-size:12px; color:#555; font-weight:500; margin-top:3px; }
@@ -358,30 +357,13 @@
   .mtab small { color:#8a8a8a; font-size:11px; }
   .mtab .miss { color:#c0c0c0; }
   .mtab .vd { font-weight:700; } .mtab .vd b { color:#8a0000; }
-  @media (max-width:760px) {
-    body { padding:22px 18px 46px; overflow-x:hidden; }
-    .h2col { display:block; }
-    .hpanel { width:100%; min-width:0; margin-bottom:24px; }
-    #fig1, #fig2 { max-width:100%; overflow-x:auto; }
-    table.gantt { min-width:760px; }
-    table.ptab { min-width:680px; }
-    .hname { width:105px; font-size:11.5px; }
-    .hax { margin-left:105px; }
-    #figScale .hname { width:90px; font-size:12.5px; }
-    #figScale .hax { margin-left:90px; }
-    #fig5 .hname { width:130px; font-size:12px; }
-    #fig5 .hax { margin-left:130px; }
-    .hax .tick:last-child { left:auto !important; right:0; transform:none; }
-    .hchart { overflow-x:auto; overflow-y:hidden; }
-    .scaledetail { margin-left:0; }
-  }
 </style>
 </head>
 <body>
 <div class="masthead">Capital Research &amp; FOEM Invest</div>
 <h1>K-AI DC Project <span style="font-weight:400;font-size:15px;color:#555;">— 국내 데이터센터 투자 현황</span></h1>
-<div class="asof"><span class="author">홍대현</span> · 2026-07-24 기준 · 집계 범위 2024.1~2026.7 발표·진행 프로젝트 (27건)</div>
-<div id="printonly">칩 세대 기준: GB300 · Morgan Stanley 1GW당 capex · 환율 1,500원/$ · 민감도 시나리오</div>
+<div class="asof"><span class="author">홍대현</span> · 2026-07-08 기준 · 집계 범위 2024.1~2026.7 발표·진행 프로젝트 (23건)</div>
+<div id="printonly">칩 세대 기준: GB300 · Morgan Stanley 1GW당 capex · 환율 1,500원/$</div>
 <div class="tabrow">
   <div class="viewtabs">
     <a class="active" data-view="report" href="#">전체 타임라인</a>
@@ -390,7 +372,7 @@
   <div class="chipsel">
     <span class="cslabel">칩 세대 기준</span><span class="csbtns">
       <button class="cg" onclick="setChip('H100',this)">H100</button><button class="cg" onclick="setChip('B200',this)">B200</button><button class="cg on" onclick="setChip('GB300',this)">GB300</button><button class="cg" onclick="setChip('Vera Rubin',this)">Vera Rubin</button></span>
-    <span class="csnote">AI 컴퓨팅 포함 총사업비 민감도 · <b>회사 확정 투자액과 구분</b> · 1,500원/$</span>
+    <span class="csnote">전력만 공개된 곳 추정 · <b>Morgan Stanley 참조</b> · 1,500원/$</span>
   </div>
 </div>
 
@@ -399,7 +381,7 @@
 <!-- ================= Fig 1 (규모 × 단계, 신설) ================= -->
 <div class="fig" id="figScale">
   <div class="fig-title"><span class="figno">Fig 1.</span> 그룹별 투자 규모 — 발표 vs 실제 진행 (용량·금액)</div>
-  <div class="unit-note">회사(그룹)별 발표 규모 순 · 막대 = 단계 스택 · <b>막대(회사) 클릭 시 프로젝트 내역 펼침</b> · 금액 미공개 사업은 투자 합계에서 제외 · SK는 용량 축 초과라 실제 총량 표기(▸)</div>
+  <div class="unit-note">회사(그룹)별 발표 규모 순 · 막대 = 단계 스택 · <b>막대(회사) 클릭 시 프로젝트 내역 펼침</b> · <b>전력만 공개한 곳(SK 15GW·네이버 등)은 우측 상단 "칩 세대 기준"으로 투자 추정</b> · SK는 축 초과라 실제 총액 표기(▸)</div>
   <div class="scalelegend">
     <span><span class="sw" style="background:#C00000"></span><b>진행</b> — 착공·건설·가동</span>
     <span><span class="sw" style="background:#E97132"></span><b>확정 계획</b> — 착공예정·인허가(시점·사업자 확정)</span>
@@ -425,16 +407,16 @@
     <colgroup><col style="width:118px"><col style="width:170px"><col style="width:180px"><col style="width:132px"><col></colgroup>
     <thead><tr><th>회사</th><th>발표 용량</th><th>발표 금액</th><th>정합 유형</th><th>조/GW 결론</th></tr></thead>
     <tbody>
-      <tr><td class="co"><span class="dot" style="background:#00A9CE"></span>GS</td><td>2.4GW <small>(계획)</small></td><td>약 30조 <small>(언론 추정)</small></td><td><span class="mt mt-mis">⚠ 범위 확인</span></td><td class="vd"><b>12.5</b> 추정 <small>(회사 확정 투자액 아님)</small></td></tr>
-      <tr><td class="co"><span class="dot" style="background:#1428A0"></span>삼성</td><td>40·60·2.4MW</td><td>0.30·0.46조 <small>(동탄·구미 대응)</small></td><td><span class="mt mt-ok">✅ 정합</span></td><td class="vd"><b>7.5·7.7</b> 유효 <small>(춘천은 금액 미공개)</small></td></tr>
+      <tr><td class="co"><span class="dot" style="background:#00A9CE"></span>GS</td><td>2.4GW <small>(계획)</small></td><td>30조 <small>(같은 사업)</small></td><td><span class="mt mt-ok">✅ 정합</span></td><td class="vd"><b>12.5</b> 유효 <small>(칩까지 ~50)</small></td></tr>
+      <tr><td class="co"><span class="dot" style="background:#1428A0"></span>삼성</td><td>40·60MW</td><td>0.30·0.46조 <small>(각 대응)</small></td><td><span class="mt mt-ok">✅ 정합</span></td><td class="vd"><b>7.5·7.7</b> 유효</td></tr>
       <tr><td class="co"><span class="dot" style="background:#E97132"></span>운영사·펀드</td><td>48·64MW 등</td><td>0.98·1.3조 <small>(각 대응)</small></td><td><span class="mt mt-ok">✅ 정합</span></td><td class="vd"><b>~20</b> 유효 <small>(콜로)</small></td></tr>
-      <tr><td class="co"><span class="dot" style="background:#EA002C"></span>SK</td><td>15GW <small>(2035 로드맵)</small></td><td class="miss">개별 미공개 <small>(3사 유치 포함 550조)</small></td><td><span class="mt mt-part">➖ 용량만</span></td><td class="vd">산출 불가</td></tr>
-      <tr><td class="co"><span class="dot" style="background:#1F3864"></span>정부 국가AI</td><td><b>MW 미공개</b></td><td>2.5조 <small>(코어)</small></td><td><span class="mt mt-part">➖ 금액만·MW미공개</span></td><td class="vd">산출 불가</td></tr>
+      <tr><td class="co"><span class="dot" style="background:#EA002C"></span>SK</td><td>15GW <small>(로드맵)</small></td><td><b>~1,000조</b> <small>(15GW 전체·2035)</small></td><td><span class="mt mt-con">🔶 구상 (S3 칩)</span></td><td class="vd"><b>~67</b> <small>(1,000÷15 = 울산 68과 동일 수준, 2035 구상)</small></td></tr>
+      <tr><td class="co"><span class="dot" style="background:#1F3864"></span>정부 국가AI</td><td><b>MW 미공개</b> <small>(비공식 40~120)</small></td><td>2.5조 <small>(코어)</small></td><td><span class="mt mt-part">➖ 칩만·MW미공개</span></td><td class="vd"><b>21~100</b> <small>산출 불확실 (210MW는 삼성 17조 별건)</small></td></tr>
       <tr><td class="co"><span class="dot" style="background:#1F3864"></span>정부 솔라시도</td><td>3GW <small>(MOU)</small></td><td>15조 <small>(MOU)</small></td><td><span class="mt mt-con">🔶 구상</span></td><td class="vd"><b>5.0</b> 미성숙 <small>(착공 시 상향)</small></td></tr>
       <tr><td class="co"><span class="dot" style="background:#2B3990"></span>KT</td><td>1GW <small>(5년집계)</small></td><td>5조 <small>(5년집계)</small></td><td><span class="mt mt-con">🔶 구상</span></td><td class="vd"><b>5.0</b> 미성숙</td></tr>
-      <tr><td class="co"><span class="dot" style="background:#03C75A"></span>네이버</td><td>200MW <small>('28), 장기 1GW</small></td><td class="miss">미공개</td><td><span class="mt mt-part">➖ 용량만</span></td><td class="vd">산출 불가</td></tr>
+      <tr><td class="co"><span class="dot" style="background:#03C75A"></span>네이버</td><td>270MW ✓</td><td class="miss">미공개</td><td><span class="mt mt-part">➖ 용량만</span></td><td class="vd">산출 불가</td></tr>
       <tr><td class="co"><span class="dot" style="background:#F7B500"></span>카카오</td><td class="miss">미공개</td><td>1.0조 ✓</td><td><span class="mt mt-part">➖ 금액만</span></td><td class="vd">산출 불가</td></tr>
-      <tr><td class="co"><span class="dot" style="background:#A50034"></span>LG</td><td>200MW <small>(전력 확보)</small></td><td>0.62조</td><td><span class="mt mt-mis">⚠ 기준 확인</span></td><td class="vd">산출 유보 <small>(전력용량·IT부하 구분 필요)</small></td></tr>
+      <tr><td class="co"><span class="dot" style="background:#A50034"></span>LG</td><td class="miss">미공개</td><td>0.62조 ✓</td><td><span class="mt mt-part">➖ 금액만</span></td><td class="vd">산출 불가</td></tr>
     </tbody>
   </table>
 </div>
@@ -470,7 +452,7 @@
   <div class="fig-title"><span class="figno">Fig 3:</span> 프로젝트별 공표 투자금액 · 확보 용량 비교</div>
   <div class="h2col">
     <div class="hpanel">
-      <h3>공표 투자금액 (2026-07-24 기준)</h3>
+      <h3>공표 투자금액 (2026-07 기준)</h3>
       <div class="unit-note">(조원 / 옅은 막대 = 구상·계획 단계 금액)</div>
       <div class="hchart" id="hAmount"></div>
     </div>
@@ -503,7 +485,7 @@
 <!-- ================= Fig 5 ================= -->
 <div class="fig" id="fig5">
   <div class="fig-title"><span class="figno">Fig 2.</span> 프로젝트별 용량당 투자단가 (조/GW)</div>
-  <div class="unit-note">(조/GW = 투자 ÷ 용량 · 같은 비용범위(S3/S2/S1)끼리 비교 · 뱃지 = 확정단계 · <b>(추정)</b> = 발표 미확정·환산치 · 칩 세대 버튼은 <b>AI 컴퓨팅 포함 총사업비 민감도</b>만 보여주며 회사 확정 투자액과 구분 — 실측 프로젝트는 고정)</div>
+  <div class="unit-note">(조/GW = 투자 ÷ 용량 · 같은 비용범위(S3/S2/S1)끼리 비교 · 뱃지 = 확정단계 · <b>(추정)</b> = 발표 미확정·환산치 · <b>전력만 공개한 SKT 15GW·국가AI는 우측 상단 "칩 세대 기준"(Morgan Stanley 1GW당 capex)으로 투자·용량 추정</b> — 실측 프로젝트는 고정)</div>
   <div class="scope-cap"><span class="scope s3">S3 IT포함</span> 시설+GPU·서버·메모리 총투자 <span class="bench" id="s3bench">GB300 기준 33$B/GW ≈ 49.5조/GW</span></div>
   <div class="hchart" id="gwS3"></div>
   <div class="scope-cap"><span class="scope s2">S2 시설풀</span> 건물+전력+냉각, IT 제외 <span class="bench">통상 벤치 8~15조/GW</span></div>
@@ -518,8 +500,8 @@
 
 <script>
 let DATA = {
-  "as_of": "2026-07-24",
-  "note": "공식 발표와 원출처를 우선한 교차검증본. 용량은 전력·IT부하·로드맵 범위가 다를 수 있으며 금액 단위는 억원. 개별 확정액과 업계 추정·유치 포함 합계는 분리 표기.",
+  "as_of": "2026-07-08",
+  "note": "Codex 조사(01~04 JSON) + Claude 직접 교차검증 병합본. verified=true 항목은 Claude가 원출처 기사로 재확인. 금액 단위: 억원.",
   "categories": {
     "corp": "국내 대기업·통신사·플랫폼",
     "global": "글로벌 빅테크·외국계 오퍼레이터/펀드",
@@ -577,30 +559,35 @@ let DATA = {
       "project": "AI 인프라 로드맵 (2035년 15GW 발표)",
       "location": "울산 외 전국",
       "capacity_mw": 14900,
-      "capacity_note": "SKT 공식 로드맵은 2029년부터 국내 5GW를 순차 가동하고 2035년 총 15GW를 목표. 울산 103MW는 별도 진행 레코드라 여기서는 잔여 14.9GW만 계상.",
-      "investment_krw_bil": null,
-      "investment_note": "SKT는 통상 1GW급 프로젝트 비용이 약 70조원에 이를 수 있다고 설명했지만 이는 회사 확정 투자액이 아님. 파트너 투자·장기 고객계약·PF를 포함한 조달 구조이며 개별 투자액은 미공개.",
-      "announced": "2026-06",
+      "capacity_note": "2035년까지 총 15GW 로드맵(SKT '아시아 AI 허브'). 울산 1호(0.1GW)는 별도 진행 레코드라 여기선 울산 외 잔여 14.9GW로 계상(합산 시 SK 발표 15.0GW). 15GW는 구상 단계.",
+      "investment_krw_bil": 9930000,
+      "investment_note": "15GW 총투자 약 1,000조원(SK그룹 차원, 2026-06~07 발표; 한경·헤럴드·전자신문). 단 1,000조는 SK 조달목표·업계율(1GW≈70조)×15GW 산술치(공식 공시는 금액 TBD). 1,000조÷15GW≈67조/GW로 울산 68과 부합. 울산(7조·별도 레코드)과 이중계상 피하려 여기선 993조로 계상 → 합산 시 SK 발표 ~1,000조. 2029년까지 5GW 단계.",
+      "announced": "2026-07",
       "construction_start": null,
       "target_operation": "2035",
       "type": "구상·파트너십",
       "status": "구상",
-      "confidence": "high",
-      "verified": true,
+      "confidence": "medium",
+      "verified": false,
       "sources": [
         {
-          "media": "SK텔레콤",
-          "date": "2026-06-29",
-          "url": "https://news.sktelecom.com/en/3155"
+          "media": "아시아경제",
+          "date": "2026-07-05",
+          "url": "https://www.asiae.co.kr/article/2026070509003112853"
+        },
+        {
+          "media": "DCD",
+          "date": "2026-06-09",
+          "url": "https://www.datacenterdynamics.com/en/news/sk-telecom-plots-gigawatt-scale-ai-cloud-in-south-korea-with-nvidia/"
         }
       ],
-      "verify_status": "confirmed",
-      "verify_action": "update-field",
-      "verify_note": "SKT 공식 뉴스룸에서 2029년부터 5GW 순차 가동, 2035년 총 15GW를 확인. 1GW당 약 70조원은 일반적 프로젝트 비용 설명이므로 15배한 1,000조원을 SK 확정 투자로 표시하지 않음.",
+      "verify_status": "partial",
+      "verify_action": "downgrade-confidence",
+      "verify_note": "DCD는 SKT-Nvidia 기가와트급 AI 클라우드와 첫 구축분 2027년 가동 목표, 울산 103MW의 1GW 확장 발표를 확인. 원본의 15GW/2035 로드맵은 이번 검색 내 독립 본문 확인 불가.",
       "verify_source": {
-        "media": "SK텔레콤",
-        "date": "2026-06-29",
-        "url": "https://news.sktelecom.com/en/3155"
+        "media": "DCD",
+        "date": "2026-06-09",
+        "url": "https://www.datacenterdynamics.com/en/news/sk-telecom-plots-gigawatt-scale-ai-cloud-in-south-korea-with-nvidia/"
       },
       "primary_group": "SK",
       "also_in": []
@@ -609,39 +596,39 @@ let DATA = {
       "id": "lgu-paju",
       "category": "corp",
       "company": "LG유플러스",
-      "partners": "LG전자·LG에너지솔루션·LS ELECTRIC, 지엔씨에너지(비상발전기 MOU)",
+      "partners": "",
       "project": "파주 AI 데이터센터(AIDC)",
       "location": "경기 파주",
-      "capacity_mw": 200,
-      "capacity_note": "LG유플러스 공식 발표 기준 200MW 전력 공급 확정. 연면적 약 15만㎡이며 1동은 준공 전 임차계약 완료.",
+      "capacity_mw": null,
+      "capacity_note": "서버 10만대+ 하이퍼스케일, 연면적 46,013㎡ (통신사 최대)",
       "investment_krw_bil": 6156,
       "investment_note": "6,156억(2025-04 공시) + 부지매입 1,053억 별도",
       "announced": "2025-04",
       "construction_start": "2025",
-      "target_operation": "2027-06",
+      "target_operation": "2027",
       "type": "자체투자",
       "status": "건설중",
-      "confidence": "high",
+      "confidence": "medium",
       "verified": true,
       "sources": [
         {
-          "media": "LG유플러스",
-          "date": "2026-06-08",
-          "url": "https://news.lguplus.com/?p=21965"
+          "media": "전자신문",
+          "date": "2025-04-29",
+          "url": "https://www.etnews.com/20250429000453"
         },
         {
-          "media": "LG유플러스",
-          "date": "2026-06-29",
-          "url": "https://news.lguplus.com/22175"
+          "media": "이코노믹데일리",
+          "date": "2025-01-30",
+          "url": "https://www.economidaily.com/view/20250130151604496"
         }
       ],
-      "verify_status": "confirmed",
-      "verify_action": "update-field",
-      "verify_note": "LG유플러스 공식 뉴스룸에서 파주 AIDC의 200MW 전력 확보, 2027년 6월 1동 준공 목표와 사전 완판을 확인. 2030년 5조원은 투자액이 아니라 누적 수주 목표로 분리.",
+      "verify_status": "partial",
+      "verify_action": "downgrade-confidence",
+      "verify_note": "전자신문은 6156억원 투자와 2027년 준공 목표를 확인. 이코노믹데일리 계열 기사에는 2025년 상반기 착공 예정, 연면적 46013㎡, 서버 10만대 이상으로 보도.",
       "verify_source": {
-        "media": "LG유플러스",
-        "date": "2026-06-08",
-        "url": "https://news.lguplus.com/?p=21965"
+        "media": "전자신문",
+        "date": "2025-04-29",
+        "url": "https://www.etnews.com/20250429000453"
       },
       "primary_group": "LG",
       "also_in": []
@@ -649,35 +636,40 @@ let DATA = {
     {
       "id": "naver-sejong",
       "category": "corp",
-      "company": "NAVER",
-      "partners": "NVIDIA·네이버클라우드",
-      "project": "1GW AI 팩토리 로드맵",
-      "location": "각 세종 + 해외 거점",
-      "capacity_mw": 1000,
-      "capacity_note": "각 세종을 전초기지로 2027년 상반기 55MW, 같은 해 100MW, 2028년 해외 포함 200MW, 장기 1GW를 지향.",
+      "company": "네이버",
+      "partners": "네이버클라우드",
+      "project": "각 세종 2·3단계 동시 증설",
+      "location": "세종",
+      "capacity_mw": 270,
+      "capacity_note": "최대 설계전력 270MW, 서버 60만 유닛(기존 3배, 총 6단계); 엔비디아 블랙웰 6만장 공급 발표. 2·3단계 2025년 말 착공→2027·2029 추가 오픈",
       "investment_krw_bil": null,
       "investment_note": "투자액 미공개",
-      "announced": "2026-06",
-      "construction_start": null,
-      "target_operation": "장기",
-      "type": "자체투자·글로벌 협력",
-      "status": "계획",
-      "confidence": "high",
+      "announced": "2025-10",
+      "construction_start": "2025-12",
+      "target_operation": "2029",
+      "type": "자체투자",
+      "status": "착공",
+      "confidence": "medium",
       "verified": true,
       "sources": [
         {
-          "media": "NAVER",
-          "date": "2026-06-08",
-          "url": "https://navercorp.com/media/pressReleasesDetail?seq=10034355"
+          "media": "전자신문",
+          "date": "2025-10-28",
+          "url": "https://www.etnews.com/20251028000113"
+        },
+        {
+          "media": "한국경제",
+          "date": "2025-11-10",
+          "url": "https://www.hankyung.com/article/2025111034931"
         }
       ],
-      "verify_status": "confirmed",
+      "verify_status": "partial",
       "verify_action": "update-field",
-      "verify_note": "NAVER 공식 보도자료에서 2027년 상반기 55MW, 연내 100MW, 2028년 해외 포함 200MW와 장기 1GW 로드맵을 확인. 1GW 완료 연도는 공개하지 않아 2029 목표 표기를 삭제.",
+      "verify_note": "전자신문은 2·3단계 공사를 2025년 연말 시작, 2027년과 2029년 추가 오픈, 총 6단계 270MW라고 보도.",
       "verify_source": {
-        "media": "NAVER",
-        "date": "2026-06-08",
-        "url": "https://navercorp.com/media/pressReleasesDetail?seq=10034355"
+        "media": "전자신문",
+        "date": "2025-10-28",
+        "url": "https://www.etnews.com/20251028000113"
       },
       "primary_group": "NAVER",
       "also_in": []
@@ -1221,8 +1213,8 @@ let DATA = {
       "partners": "삼성SDS(주관)·네이버클라우드·삼성물산·카카오·삼성전자·클러쉬·KT·전라남도·서남해안기업도시개발",
       "project": "국가 AI컴퓨팅센터(민관 SPC)",
       "location": "전남 해남 솔라시도",
-      "capacity_mw": null,
-      "capacity_note": "과기정통부 공식 자료는 2028년까지 AI 반도체 1.5만장 이상을 제시하며 MW는 공개하지 않음. 별도 확장 보도의 210MW와 혼합하지 않음.",
+      "capacity_mw": 210,
+      "capacity_note": "210MW는 삼성 발표 기준 국가 AI DC 규모(뉴스핌 2026-07). 2.5조 1단계 공식 사업비 보도엔 MW 미명시, GPU·NPU 1.5만장(2028)만 확인 — MW는 참고치.",
       "investment_krw_bil": 25000,
       "investment_note": "총 2.5조; 초기 자본금 4,000억(공공 1,160억+민간 2,840억), 정부 지분 30% 미만",
       "announced": "2025-02",
@@ -1230,27 +1222,27 @@ let DATA = {
       "target_operation": "2028",
       "type": "정부·민간 SPC",
       "status": "착공예정",
-      "confidence": "high",
+      "confidence": "medium",
       "verified": true,
       "sources": [
         {
-          "media": "과학기술정보통신부",
-          "date": "2026-05-11",
-          "url": "https://www.msit.go.kr/eng/bbs/view.do?bbsSeqNo=42&mId=4&mPid=2&nttSeqNo=1234&sCode=eng"
+          "media": "ZDNet",
+          "date": "2026-03-10",
+          "url": "https://zdnet.co.kr/view/?no=20260310171011"
         },
         {
-          "media": "과학기술정보통신부",
-          "date": "2026-03-10",
-          "url": "https://www.msit.go.kr/eng/bbs/view.do?bbsSeqNo=42&mId=4&mPid=2&nttSeqNo=1179&sCode=eng"
+          "media": "아시아경제",
+          "date": "2026-05-11",
+          "url": "https://www.asiae.co.kr/en/article/2026051117073960678"
         }
       ],
-      "verify_status": "confirmed",
-      "verify_action": "update-field",
-      "verify_note": "과기정통부 공식 자료에서 삼성SDS 컨소시엄 선정, 2026년 3분기 착공, 2028년 완공과 AI 반도체 1.5만장 이상을 확인. 공식 MW가 없어 기존 210MW 표기는 삭제.",
+      "verify_status": "partial",
+      "verify_action": "downgrade-confidence",
+      "verify_note": "아시아경제는 과기정통부가 삼성SDS 컨소시엄을 최종 사업자로 확정했고 2026년 3분기 착공, 총 2.5조원, 2028년까지 1.5만 AI 반도체 구축 계획을 보도. 210MW는 같은 2.5조 사업의 공식 수치로 확인되지 않고, 2026-07 뉴스핌의 17조 확장 보도에 등장함.",
       "verify_source": {
-        "media": "과학기술정보통신부",
+        "media": "아시아경제",
         "date": "2026-05-11",
-        "url": "https://www.msit.go.kr/eng/bbs/view.do?bbsSeqNo=42&mId=4&mPid=2&nttSeqNo=1234&sCode=eng"
+        "url": "https://www.asiae.co.kr/en/article/2026051117073960678"
       },
       "primary_group": "GOV",
       "also_in": [
@@ -1336,152 +1328,6 @@ let DATA = {
       "also_in": []
     },
     {
-      "id": "sds-chuncheon",
-      "category": "corp",
-      "company": "삼성SDS",
-      "partners": "춘천시",
-      "project": "춘천 모듈러 AI 데이터센터",
-      "location": "강원 춘천 칠전동",
-      "capacity_mw": 2.4,
-      "capacity_note": "삼성SDS 기존 데이터센터 부지 내 1단계 2.4MW 모듈러 AIDC. 수요에 따른 추가 확장 구상.",
-      "investment_krw_bil": null,
-      "investment_note": "투자액 미공개",
-      "announced": "2026-07",
-      "construction_start": "2026-08",
-      "target_operation": "2027-10",
-      "type": "자체투자",
-      "status": "인허가",
-      "confidence": "medium",
-      "verified": false,
-      "sources": [
-        {
-          "media": "강원일보",
-          "date": "2026-07-06",
-          "url": "https://v.daum.net/v/20260706000132566"
-        }
-      ],
-      "verify_status": "partial",
-      "verify_action": "add",
-      "verify_note": "춘천시 건축허가 신청과 2.4MW·모듈러 방식·2027년 10월 완공 계획을 지역 보도로 확인. 2026년 7월 기준 허가 전이므로 착공·준공 일정은 계획 단계.",
-      "verify_source": {
-        "media": "강원일보",
-        "date": "2026-07-06",
-        "url": "https://v.daum.net/v/20260706000132566"
-      },
-      "primary_group": "SAMSUNG",
-      "also_in": []
-    },
-    {
-      "id": "neoai-pohang",
-      "category": "corp",
-      "company": "NeoAI Cloud",
-      "partners": "현대건설·포항시",
-      "project": "포항 광명산단 AI 데이터센터",
-      "location": "경북 포항 오천읍",
-      "capacity_mw": 300,
-      "capacity_note": "1단계 40MW + 2단계 260MW. 2026년 7월 착공식 개최, 1단계 2027년 상반기 완공 목표.",
-      "investment_krw_bil": 20000,
-      "investment_note": "총사업비 약 2조원 보도. 단계별 집행액과 확정 조달 구조는 추가 확인 필요.",
-      "announced": "2026-07",
-      "construction_start": "2026-07",
-      "target_operation": "2027-H1",
-      "type": "민간개발",
-      "status": "건설중",
-      "confidence": "high",
-      "verified": false,
-      "sources": [
-        {
-          "media": "DCD",
-          "date": "2026-07-21",
-          "url": "https://www.datacenterdynamics.com/en/news/ground-broken-on-300mw-data-center-in-pohang-south-korea/"
-        }
-      ],
-      "verify_status": "confirmed",
-      "verify_action": "add",
-      "verify_note": "2026년 7월 20일 착공, 총 300MW(40+260MW), 1단계 2027년 상반기 목표와 현대건설 시공을 확인. 2조원은 보도 수치라 범위 주석을 유지.",
-      "verify_source": {
-        "media": "DCD",
-        "date": "2026-07-21",
-        "url": "https://www.datacenterdynamics.com/en/news/ground-broken-on-300mw-data-center-in-pohang-south-korea/"
-      },
-      "primary_group": "COLO",
-      "also_in": []
-    },
-    {
-      "id": "sgc-gunsan",
-      "category": "corp",
-      "company": "SGC에너지",
-      "partners": "KT·미래에셋증권·SGC그린파워",
-      "project": "군산 300MW AI 데이터센터",
-      "location": "전북 군산 국가산단2",
-      "capacity_mw": 300,
-      "capacity_note": "총 300MW 구상. 1단계는 40MW 모듈러 데이터센터로 2026년 하반기 착공, 2028년 1분기 가동 목표.",
-      "investment_krw_bil": null,
-      "investment_note": "투자액 미공개",
-      "announced": "2026-02",
-      "construction_start": "2026-H2",
-      "target_operation": "2028-Q1",
-      "type": "MOU·민간개발",
-      "status": "MOU",
-      "confidence": "medium",
-      "verified": false,
-      "sources": [
-        {
-          "media": "DCD",
-          "date": "2026-02-04",
-          "url": "https://www.datacenterdynamics.com/en/news/south-koreas-sgc-energy-to-build-300mw-data-center-in-north-jeolla/"
-        }
-      ],
-      "verify_status": "confirmed",
-      "verify_action": "add",
-      "verify_note": "SGC에너지·KT·미래에셋증권 참여, 총 300MW와 1단계 40MW 일정을 확인. 협약 단계이므로 KT의 전국 1GW 확정 용량과 중복 합산하지 않음.",
-      "verify_source": {
-        "media": "DCD",
-        "date": "2026-02-04",
-        "url": "https://www.datacenterdynamics.com/en/news/south-koreas-sgc-energy-to-build-300mw-data-center-in-north-jeolla/"
-      },
-      "primary_group": "COLO",
-      "also_in": [
-        "KT"
-      ]
-    },
-    {
-      "id": "nfd-dangjin",
-      "category": "corp",
-      "company": "NFD Korea",
-      "partners": "한국전력",
-      "project": "당진 300MW 데이터센터 캠퍼스",
-      "location": "충남 당진",
-      "capacity_mw": 140,
-      "capacity_note": "6개 동×50MW로 총 300MW 캠퍼스를 표방하나 회사 웹사이트의 IT부하는 140MW. 비교 차트에는 IT부하 140MW를 적용.",
-      "investment_krw_bil": null,
-      "investment_note": "투자액 미공개",
-      "announced": "2026-06",
-      "construction_start": "2026-Q3",
-      "target_operation": "2028-Q4",
-      "type": "민간개발",
-      "status": "인허가",
-      "confidence": "high",
-      "verified": false,
-      "sources": [
-        {
-          "media": "DCD",
-          "date": "2026-06-16",
-          "url": "https://www.datacenterdynamics.com/en/news/data-center-company-nfd-korea-to-build-300mw-campus-south-of-seoul/"
-        }
-      ],
-      "verify_status": "confirmed",
-      "verify_action": "add",
-      "verify_note": "건축허가·한전 전력계약 확보, 2026년 3분기 착공과 2028년 4분기 완공 목표를 확인. 총 캠퍼스 300MW와 IT부하 140MW를 구분.",
-      "verify_source": {
-        "media": "DCD",
-        "date": "2026-06-16",
-        "url": "https://www.datacenterdynamics.com/en/news/data-center-company-nfd-korea-to-build-300mw-campus-south-of-seoul/"
-      },
-      "primary_group": "COLO",
-      "also_in": []
-    },
-    {
       "id": "gs-donghae",
       "category": "corp",
       "company": "㈜GS (GS그룹)",
@@ -1489,35 +1335,35 @@ let DATA = {
       "project": "동해 AI 데이터센터 (2.4GW)",
       "location": "강원 동해 북평2산단",
       "capacity_mw": 2400,
-      "capacity_note": "정부 발표 총 2.4GW. GS 공시 기준 2028년까지 1.2GW를 우선 추진하며 추가 1.2GW는 검토 단계.",
+      "capacity_note": "1단계 1.2GW(2028)+2단계 1.2GW(2029), 총 2.4GW; 부지 약 18만평(2022 조성완료)",
       "investment_krw_bil": 300000,
-      "investment_note": "약 30조원은 지역·언론 추정치로 회사 공시 확정액이 아님. 정부가 밝힌 SK·GS·NAVER 3사 550조원은 투자 유치를 포함한 합계라 개별 배분 불가.",
+      "investment_note": "직접투자비 약 30조원; GPU·메모리 포함 최대 120조 추산",
       "announced": "2026-06",
       "construction_start": null,
       "target_operation": "2029",
       "type": "정부 낙점·민간 SPC",
       "status": "계획",
-      "confidence": "medium",
+      "confidence": "high",
       "verified": true,
       "sources": [
         {
-          "media": "대한민국 정책브리핑",
+          "media": "ZDNet",
           "date": "2026-06-29",
-          "url": "https://m.korea.kr/news/policyNewsView.do?newsId=148967294"
+          "url": "https://zdnet.co.kr/view/?no=20260629165024"
         },
         {
-          "media": "뉴시스",
-          "date": "2026-07-06",
-          "url": "https://mobile.newsis.com/view/NISX20260706_0003697198"
+          "media": "녹색경제신문",
+          "date": "2026-07-01",
+          "url": "https://greened.kr/news/articleView.html?idxno=344212"
         }
       ],
-      "verify_status": "partial",
-      "verify_action": "downgrade-confidence",
-      "verify_note": "정부 공식 발표에서 GS 2.4GW를 확인. GS 공시는 2028년까지 1.2GW 우선 추진과 추가 1.2GW 검토를 확인하지만, 30조원은 공식 확정액이 아니어서 추정치로 표시.",
+      "verify_status": "confirmed",
+      "verify_action": "add",
+      "verify_note": "Codex GS조사가 놓친 것을 Opus 독립검증으로 발견·추가. 정부 메가프로젝트 낙점, GS AI인프라 SPC 설립. 1단계 1.2GW 2028, 총 2.4GW 2029, 직접투자 30조.",
       "verify_source": {
-        "media": "대한민국 정책브리핑",
+        "media": "ZDNet",
         "date": "2026-06-29",
-        "url": "https://m.korea.kr/news/policyNewsView.do?newsId=148967294"
+        "url": "https://zdnet.co.kr/view/?no=20260629165024"
       },
       "primary_group": "GS",
       "also_in": []
@@ -1564,72 +1410,101 @@ let DATA = {
       "also_in": []
     }
   ],
+  "excluded": [
+    {
+      "id": "ulsan-industrial",
+      "reason": "울산 국가산단 AI DC 지정 구상 — 민간 투자자·규모 미확인(low), SK×AWS 프로젝트와 부지 중첩"
+    },
+    {
+      "id": "saemangeum",
+      "reason": "새만금 RE100 DC — 착공 근거 없음, 지연·불확실(low)"
+    },
+    {
+      "id": "chuncheon-cluster",
+      "reason": "강원 수열 클러스터 — 개별 입주 DC 투자 미확정"
+    },
+    {
+      "id": "microsoft-korea",
+      "reason": "2024-2026 국내 신규 DC 투자 확정 발표 미확인"
+    }
+  ],
+  "verification": {
+    "ran": "2026-07-08",
+    "by": "Codex (독립 재검증) + Claude 반영",
+    "summary": {
+      "confirmed": 10,
+      "partial": 8,
+      "conflicting": 2,
+      "unverifiable": 1
+    },
+    "note": "각 프로젝트 verify_status·verify_action·verify_note·verify_source 필드 참조. conflicting 2건(solaseado-park, sds-gumi)·핵심 필드 정정 완료. | GS: Codex 조사가 false-negative(빈 배열)였으나 Opus 독립검증에서 동해 2.4GW·30조·에포크 안양 발견·추가."
+  },
   "groups": [
     {
       "key": "SK",
       "name": "SK",
       "color": "#EA002C",
-      "blurb": "?? 103MW ???2035? 15GW AI ??? ???"
+      "blurb": "SKT·SK브로드밴드·SK에코플랜트 + AWS 합작"
     },
     {
       "key": "SAMSUNG",
-      "name": "??",
+      "name": "삼성",
       "color": "#1428A0",
-      "blurb": "?? 40MW ????? 60MW ????? 2.4MW ???"
+      "blurb": "삼성SDS 자체 DC + 국가 AI컴퓨팅센터 주관"
     },
     {
       "key": "NAVER",
-      "name": "???",
+      "name": "네이버",
       "color": "#03C75A",
-      "blurb": "55MW(2027H1)?100MW(2027)?200MW(2028)??? 1GW AI ???"
+      "blurb": "각 세종 하이퍼스케일 증설"
     },
     {
       "key": "KAKAO",
-      "name": "???",
+      "name": "카카오",
       "color": "#F7B500",
-      "blurb": "?? ?????? ?? ?2????? ???"
+      "blurb": "안산 가동 + 남양주 제2센터"
     },
     {
       "key": "LG",
       "name": "LG",
       "color": "#A50034",
-      "blurb": "?? 200MW ?? ???2027? 6? 1? ?? ??"
+      "blurb": "LG유플러스 파주 AIDC"
     },
     {
       "key": "KT",
       "name": "KT",
       "color": "#2B3990",
-      "blurb": "?? 25???5? 1GW AIDC ?? ??"
+      "blurb": "5년 5조·1GW AIDC 계획"
     },
     {
       "key": "AWS",
       "name": "AWS",
       "color": "#FF9900",
-      "blurb": "?? ?? ??? ????? ?? ?? ??"
+      "blurb": "울산 SK 합작 + 한국 리전 증설"
     },
     {
       "key": "GLOBAL",
-      "name": "??? ???",
-      "color": "#7030A0",
-      "blurb": "OpenAI ????? ??? ??"
+      "name": "글로벌 빅테크·기타",
+      "color": "#6B6B6B",
+      "blurb": "OpenAI 스타게이트 코리아 등"
     },
     {
       "key": "COLO",
-      "name": "??????",
+      "name": "운영사·펀드",
       "color": "#E97132",
-      "blurb": "?? ???? ???????? ?? ?? ????"
+      "blurb": "Equinix·STT·Digital Edge·PDG·Keppel·퍼시픽"
     },
     {
       "key": "GOV",
-      "name": "?????",
+      "name": "정부·공공",
       "color": "#1F3864",
-      "blurb": "?? AI????????????? ??AI?????"
+      "blurb": "국가 AI컴퓨팅센터·솔라시도·광주"
     },
     {
       "key": "GS",
       "name": "GS",
       "color": "#00A9CE",
-      "blurb": "?? 2.4GW(? 30? ?? ??)???? ??"
+      "blurb": "동해 2.4GW·30조 메가프로젝트 + 에포크 안양 자체 DC"
     }
   ]
 };
@@ -1642,12 +1517,12 @@ const P = [
  // category: corp | global | gov
  {cat:"corp", co:"SK그룹×AWS", pt:"SKT·SK에코플랜트, 울산시", an:"25.06", lo:"울산 미포산단",
   s:"2025-08", e:"2029-12", firm:true, lbl:"103MW · 7조", note:"1단계 41MW '27.11 → 103MW '29.2; 1GW 확장 구상 별도"},
- {cat:"corp", co:"SKT", pt:"SK그룹", an:"26.06", lo:"전국",
-  s:"2026-06", e:"2035-12", firm:false, lbl:"2029년부터 5GW 순차 가동 → 2035년 15GW", tail:"'35"},
+ {cat:"corp", co:"SKT", pt:"엔비디아(AI클라우드 협력)", an:"26.07", lo:"울산 외 전국",
+  s:"2026-07", e:"2035-12", firm:false, lbl:"울산 1GW·70조 구상 → 2035년 15GW 로드맵", tail:"'35"},
  {cat:"corp", co:"LG유플러스", pt:"", an:"25.04", lo:"파주",
-  s:"2025-04", e:"2027-06", firm:true, lbl:"200MW 전력 확보 · 6,156억"},
- {cat:"corp", co:"네이버", pt:"네이버클라우드", an:"26.06", lo:"세종 중심",
-  s:"2026-06", e:"2030-12", firm:false, lbl:"55MW('27H1) → 100MW('27) → 200MW('28)", tail:"장기 1GW"},
+  s:"2025-04", e:"2027-12", firm:true, lbl:"6,156억 · 서버 10만대+"},
+ {cat:"corp", co:"네이버", pt:"네이버클라우드", an:"25.10", lo:"세종",
+  s:"2025-12", e:"2029-12", firm:true, lbl:"각 세종 2·3단계 — 270MW 설계"},
  {cat:"corp", co:"카카오", pt:"", an:"25.06", lo:"남양주 왕숙",
   s:"2026-01", e:"2029-12", firm:false, lbl:"6,000억 · 연면적 9.2만㎡"},
  {cat:"corp", co:"카카오", pt:"한양대 ERICA", an:"'20", lo:"안산",
@@ -1656,12 +1531,10 @@ const P = [
   s:"2024-01", e:"2026-03", firm:true, lbl:"동탄 40MW · 3,008억", clampL:true},
  {cat:"corp", co:"삼성SDS", pt:"", an:"26.01", lo:"구미",
   s:"2026-06", e:"2029-12", firm:true, lbl:"4,639억 · 60MW"},
- {cat:"corp", co:"삼성SDS", pt:"강원도·춘천시", an:"26.07", lo:"춘천",
-  s:"2026-08", e:"2027-10", firm:false, lbl:"모듈러 AI DC · 2.4MW"},
  {cat:"corp", co:"KT", pt:"KT클라우드(합병 추진)", an:"26.07", lo:"전국 25개소",
   s:"2026-07", e:"2031-06", firm:false, lbl:"5년 5조 · 1GW 계획", tail:"'31"},
  {cat:"corp", co:"GS(㈜GS)", pt:"GS AI인프라·GS건설·자이C&A·GS동해전력", an:"26.06", lo:"강원 동해",
-  s:"2026-06", e:"2029-12", firm:false, lbl:"동해 2.4GW · 약 30조(언론 추정)"},
+  s:"2026-06", e:"2029-12", firm:false, lbl:"동해 2.4GW · 30조 (정부 낙점)"},
  {cat:"corp", co:"GS건설", pt:"", an:"'24", lo:"안양 호계",
   s:"2024-01", e:"2024-06", firm:true, lbl:"", lblOut:"에포크 안양 40MW (2024 가동)", clampL:true},
 
@@ -1683,12 +1556,6 @@ const P = [
   s:"2026-06", e:"2030-12", firm:false, lbl:"60MW · Tier III (2030 목표)"},
  {cat:"global", co:"퍼시픽자산운용", pt:"CPPIB·신한(8,280억)", an:"'22", lo:"용인 죽전",
   s:"2024-01", e:"2025-10", firm:true, lbl:"죽전 64MW · 1.3조", clampL:true},
- {cat:"global", co:"NeoAI Cloud", pt:"포항시·경북도", an:"26.07", lo:"포항 광명산단",
-  s:"2026-07", e:"2027-06", firm:true, lbl:"1단계 40MW 착공 · 총 300MW·약 2조"},
- {cat:"global", co:"SGC에너지", pt:"KT·전북도·군산시", an:"26.02", lo:"군산",
-  s:"2026-07", e:"2028-03", firm:false, lbl:"1단계 40MW · 총 300MW MOU"},
- {cat:"global", co:"NFD코리아", pt:"당진시", an:"26.06", lo:"당진",
-  s:"2026-07", e:"2028-12", firm:false, lbl:"IT부하 140MW · 캠퍼스 전력 300MW"},
 
  {cat:"gov", co:"국가 AI컴퓨팅센터", pt:"삼성SDS 주관 컨소시엄", an:"25.02", lo:"해남 솔라시도",
   s:"2026-07", e:"2028-12", firm:false, lbl:"2.5조 · GPU 1.5만장 · '26 3Q 착공예정"},
@@ -1810,12 +1677,11 @@ function hbars(elId, rows, ticks, fmt, defaultColor){
 }
 // Panel 1: amounts in 조원 (옅은 세그먼트 = 구상·계획)
 hbars("hAmount", [
-  {name:"GS 동해(2.4GW·언론 추정)", segs:[{v:30, firm:false}], end:"약 30조"},
+  {name:"GS 동해(2.4GW)",    segs:[{v:30,  firm:false}]}, // 직접투자 30조, 정부 낙점·계획
   {name:"솔라시도 DC파크(SFR)", segs:[{v:15,  firm:false}]}, // SFR 3GW MOU
   {name:"SK그룹×AWS 울산",   segs:[{v:7,   firm:true}]},
   {name:"KT (5년 계획)",     segs:[{v:5,   firm:false}]},
   {name:"국가 AI컴퓨팅센터",  segs:[{v:2.5, firm:false}]}, // 착공예정(2026 3Q) → 계획
-  {name:"NeoAI 포항(언론 보도)", segs:[{v:2.0, firm:true}], end:"약 2조"},
   {name:"퍼시픽(죽전)",       segs:[{v:1.3, firm:true}]},
   {name:"카카오(안산+남양주)", segs:[{v:0.4, firm:true},{v:0.6,firm:false}], end:"1.0조"},
   {name:"Princeton Digital", segs:[{v:0.98,firm:true}], end:"$700M"},
@@ -1826,11 +1692,8 @@ hbars("hAmount", [
 
 // Panel 2: capacity MW (옅은 세그먼트 = 인허가·계획)
 hbars("hCapacity", [
-  {name:"NeoAI 포항",        segs:[{v:40, firm:true},{v:260, firm:false}], end:"40 + 260(계획)"},
-  {name:"SGC 군산",          segs:[{v:300, firm:false}], end:"300(MOU)"},
-  {name:"네이버 AI 팩토리",  segs:[{v:200, firm:false}], end:"200('28) · 장기 1GW"},
-  {name:"LG유플러스 파주",    segs:[{v:200, firm:true}], end:"200(전력 확보)"},
-  {name:"NFD 당진",          segs:[{v:140, firm:false}], end:"140 IT부하"},
+  {name:"네이버 각 세종",    segs:[{v:270, firm:true}], end:"270"},
+  {name:"국가 AI컴퓨팅센터",  segs:[{v:210, firm:false}], end:"210(착공예정)"},
   {name:"SK그룹×AWS 울산",   segs:[{v:103, firm:true}], end:"103"},
   {name:"Digital Edge 부평/안산", segs:[{v:96,firm:true},{v:60,firm:false}], end:"96 + 60(계획)"},
   {name:"퍼시픽(죽전)",       segs:[{v:64,  firm:true}], end:"64"},
@@ -1841,7 +1704,6 @@ hbars("hCapacity", [
   {name:"GS 에포크 안양",     segs:[{v:40,  firm:true}], end:"40"},
   {name:"STT GDC 서울",      segs:[{v:30,  firm:true}], end:"30"},
   {name:"Equinix 고양",      segs:[{v:22,  firm:true}], end:"22"},
-  {name:"삼성SDS 춘천",       segs:[{v:2.4, firm:false}], end:"2.4(인허가)"},
 ], [0,100,200,300], t=>t, "#C00000");
 
 // ================= Fig 4: 발표 규모 vs 실제 진행 =================
@@ -1849,27 +1711,26 @@ hbars("hCapacity", [
 // 진행 = 착공·건설·가동된 프로젝트 합계 / 계획 = 구상·MOU·인허가·로드맵.
 // 규모(GW) — 발표 큰 순
 hbars("hGroupCap", [
-  {name:"SK",         sub:"발표 15.00 · 진행 0.10", segs:[{v:0.103,firm:true,c:"#EA002C"},{v:14.897,firm:false,c:"#EA002C"}]},
-  {name:"정부·공공",   sub:"발표 3.00 · 진행 0",    segs:[{v:3.00,firm:false,c:"#1F3864"}]},
+  {name:"SK",         sub:"발표 15.1 · 진행 0.10", segs:[{v:0.10,firm:true,c:"#EA002C"},{v:15.00,firm:false,c:"#EA002C"}]},
+  {name:"정부·공공",   sub:"발표 3.21 · 진행 0",    segs:[{v:0.001,firm:true,c:"#1F3864"},{v:3.21,firm:false,c:"#1F3864"}]},
   {name:"GS",         sub:"발표 2.44 · 진행 0.04", segs:[{v:0.04,firm:true,c:"#00A9CE"},{v:2.40,firm:false,c:"#00A9CE"}]},
-  {name:"운영사·펀드", sub:"발표 1.12 · 진행 0.30", segs:[{v:0.30,firm:true,c:"#E97132"},{v:0.82,firm:false,c:"#E97132"}]},
-  {name:"KT",         sub:"발표 1.00 · 진행 0",    segs:[{v:1.00,firm:false,c:"#2B3990"}]},
-  {name:"네이버",      sub:"발표 1.00 · 진행 0",    segs:[{v:1.00,firm:false,c:"#03C75A"}]},
-  {name:"LG",         sub:"발표 0.20 · 진행 0.20", segs:[{v:0.20,firm:true,c:"#A50034"}]},
-  {name:"삼성",       sub:"발표 0.102 · 진행 0.10", segs:[{v:0.10,firm:true,c:"#1428A0"},{v:0.0024,firm:false,c:"#1428A0"}]},
+  {name:"KT",         sub:"발표 1.00 · 진행 0",    segs:[{v:0.001,firm:true,c:"#2B3990"},{v:1.00,firm:false,c:"#2B3990"}]},
+  {name:"운영사·펀드", sub:"발표 0.38 · 진행 0.26", segs:[{v:0.26,firm:true,c:"#E97132"},{v:0.12,firm:false,c:"#E97132"}]},
+  {name:"네이버",      sub:"발표 0.27 · 진행 0.27", segs:[{v:0.27,firm:true,c:"#03C75A"}]},
+  {name:"삼성",       sub:"발표 0.10 · 진행 0.10", segs:[{v:0.10,firm:true,c:"#1428A0"}]},
 ], [0,4,8,12,16], t=>t+"GW", "#C00000");
 
 // 투자금액(조) — 발표 큰 순
 hbars("hGroupAmount", [
-  {name:"GS",         sub:"발표 약 30(언론 추정) · 진행 0", segs:[{v:30,firm:false,c:"#00A9CE"}]},
-  {name:"정부·공공",   sub:"발표 17.5 · 진행 0", segs:[{v:17.5,firm:false,c:"#1F3864"}]},
-  {name:"SK",         sub:"발표 7 · 진행 7",    segs:[{v:7,firm:true,c:"#EA002C"}]},
-  {name:"KT",         sub:"발표 5 · 진행 0",    segs:[{v:5,firm:false,c:"#2B3990"}]},
-  {name:"운영사·펀드", sub:"발표 4.3 · 진행 4.3",segs:[{v:4.28,firm:true,c:"#E97132"}]},
+  {name:"SK",         sub:"발표 77 · 진행 7",   segs:[{v:7,firm:true,c:"#EA002C"},{v:70,firm:false,c:"#EA002C"}]},
+  {name:"GS",         sub:"발표 30 · 진행 0",   segs:[{v:0.01,firm:true,c:"#00A9CE"},{v:30,firm:false,c:"#00A9CE"}]},
+  {name:"정부·공공",   sub:"발표 17.5 · 진행 0", segs:[{v:0.01,firm:true,c:"#1F3864"},{v:17.5,firm:false,c:"#1F3864"}]},
+  {name:"KT",         sub:"발표 5 · 진행 0",    segs:[{v:0.01,firm:true,c:"#2B3990"},{v:5,firm:false,c:"#2B3990"}]},
+  {name:"운영사·펀드", sub:"발표 2.3 · 진행 2.3",segs:[{v:2.28,firm:true,c:"#E97132"}]},
   {name:"카카오",      sub:"발표 1.0 · 진행 0.4",segs:[{v:0.4,firm:true,c:"#F7B500"},{v:0.6,firm:false,c:"#F7B500"}]},
   {name:"삼성",       sub:"발표 0.76 · 진행 0.76",segs:[{v:0.76,firm:true,c:"#1428A0"}]},
   {name:"LG",         sub:"발표 0.62 · 진행 0.62",segs:[{v:0.62,firm:true,c:"#A50034"}]},
-], [0,10,20,30], t=>t+"조", "#C00000");
+], [0,20,40,60,80], t=>t+"조", "#C00000");
 
 // ================= Fig 5: GW당 투자단가 (framework) =================
 // 같은 비용범위(S)끼리만 비교. 통상 단가대는 캡션 텍스트로만 표기(시각 박스 제거).
@@ -1881,7 +1742,8 @@ window.renderFig2 = function(){
   var g=window.CHIPGEN, ms=window.MS_CAPEX[g], c=window.chipCapex();
   hbars("gwS3", [
     {name:`SK×AWS 울산 <span class="tier t3">T3</span>`, sub:"건설중 · 7조 ÷ 0.103GW (실측)", segs:[{v:68.0,firm:true,c:"#7030A0"}], end:"68.0조/GW"},
-    {name:`AI 컴퓨팅 총사업비 민감도 <span class="tier t1">S3</span>`, sub:`${g}(${ms}$B/GW) 가정 · 회사 발표·확정 투자액 아님`, segs:[{v:c,firm:false,c:"#7030A0"}], end:`${c.toFixed(1)}조/GW`},
+    {name:`SKT 15GW 로드맵 <span class="tier t1">T1</span>`, sub:`전력 15GW × ${g}(${ms}$B/GW) ≈ ${Math.round(15*c)}조 (추정)`, segs:[{v:c,firm:false,c:"#7030A0"}], end:`~${Math.round(c)} (추정)`},
+    {name:`국가AI컴퓨팅센터 <span class="tier t2">T2</span>`, sub:`발표 2.5조 ÷ ${g}(${ms}$B/GW) → 용량 ≈${Math.round(2.5/c*1000)}MW (추정)`, segs:[{v:c,firm:false,c:"#7030A0"}], end:`~${Math.round(c)} (추정)`},
   ], [0,30,60,90], t=>t+"조", "#7030A0");
   var b=document.getElementById('s3bench'); if(b) b.textContent = `${g} 기준 ${ms}$B/GW ≈ ${c.toFixed(1)}조/GW`;
 };
@@ -1889,7 +1751,7 @@ window.setChip = function(gen, el){ window.CHIPGEN=gen; window.renderFig2(); if(
 window.renderFig2();
 // S2 · 시설 풀코스트(IT 제외) — 벤치 8~15조/GW
 hbars("gwS2", [
-  {name:`GS 동해 <span class="tier t2">T2</span>`, sub:"계획 · 약 30조(언론 추정) ÷ 2.4GW", segs:[{v:12.5,firm:false,c:"#2E75B6"}], end:"12.5조/GW(추정)"},
+  {name:`GS 동해 <span class="tier t2">T2</span>`, sub:"계획 · 30조(직접) ÷ 2.4GW · 칩 포함 시 ~50 (추정)", segs:[{v:12.5,firm:false,c:"#2E75B6"}], end:"12.5조/GW"},
   {name:`삼성SDS 구미 <span class="tier t2">T2</span>`, sub:"착공예정 · 4,639억(상향, 최초 공시 4,273억) ÷ 0.06GW", segs:[{v:7.7,firm:false,c:"#2E75B6"}], end:"7.7조/GW"},
   {name:`삼성SDS 동탄 <span class="tier t3">T3</span>`, sub:"가동 · 3,008억 ÷ 0.04GW", segs:[{v:7.5,firm:true,c:"#2E75B6"}], end:"7.5조/GW"},
 ], [0,5,10,15,20], t=>t+"조", "#2E75B6");
@@ -1908,25 +1770,27 @@ hbars("gwT1", [
 (function(){
   var STAGES = [["run","진행","#C00000"],["plan","확정 계획","#E97132"],["concept","먼 미래 구상","#bdbdbd"]];
   function buildSD(){
+    var c=window.chipCapex(), g=window.CHIPGEN;
+    var skRoad=15*c, skRest=Math.round(skRoad-7), navInv=Math.round(0.27*c), govCap=2.5/c;
     return [
-    {key:"SK",name:"SK",inv:{run:7,plan:0,concept:0},cap:{run:0.103,plan:0,concept:14.897},projs:[
-      {n:"울산 AI DC (SK×AWS, 건설중)",s:"run",inv:7,cap:0.103},{n:"15GW AI 인프라 로드맵 (2035 · 투자액 미공개)",s:"concept",inv:null,cap:14.897}]},
+    {key:"SK",name:"SK",inv:{run:7,plan:0,concept:skRest},cap:{run:0.1,plan:0,concept:14.9},projs:[
+      {n:"울산 AI DC (SK×AWS, 건설중)",s:"run",inv:7,cap:0.1},{n:"15GW 로드맵 (2035 · 15GW×"+g+" ≈ "+Math.round(skRoad)+"조 추정)",s:"concept",inv:skRest,cap:14.9}]},
     {key:"GS",name:"GS",inv:{run:0,plan:30,concept:0},cap:{run:0.04,plan:2.4,concept:0},projs:[
-      {n:"동해 2.4GW (약 30조·언론 추정)",s:"plan",inv:30,cap:2.4},{n:"에포크 안양 (가동)",s:"run",inv:null,cap:0.04}]},
-    {key:"GOV",name:"정부·공공",inv:{run:0,plan:2.5,concept:15},cap:{run:0,plan:0,concept:3.0},projs:[
-      {n:"국가AI컴퓨팅센터 (착공예정 · MW 미공개)",s:"plan",inv:2.5,cap:null},{n:"솔라시도 SFR (MOU)",s:"concept",inv:15,cap:3.0},{n:"광주 국가AI (가동)",s:"run",inv:null,cap:null}]},
+      {n:"동해 2.4GW (정부 낙점)",s:"plan",inv:30,cap:2.4},{n:"에포크 안양 (가동)",s:"run",inv:null,cap:0.04}]},
+    {key:"GOV",name:"정부·공공",inv:{run:0,plan:2.5,concept:15},cap:{run:0,plan:govCap,concept:3.0},projs:[
+      {n:"국가AI컴퓨팅센터 (착공예정 · MW미발표, 2.5조÷"+g+"≈"+Math.round(govCap*1000)+"MW 추정)",s:"plan",inv:2.5,cap:govCap},{n:"솔라시도 SFR (MOU)",s:"concept",inv:15,cap:3.0},{n:"광주 국가AI (가동)",s:"run",inv:null,cap:null}]},
     {key:"KT",name:"KT",inv:{run:0,plan:0,concept:5},cap:{run:0,plan:0,concept:1.0},projs:[
       {n:"전국 25개소 5년계획",s:"concept",inv:5,cap:1.0}]},
-    {key:"COLO",name:"운영사·펀드",inv:{run:4.28,plan:0,concept:0},cap:{run:0.30,plan:0.52,concept:0.30},projs:[
-      {n:"퍼시픽 죽전 (가동)",s:"run",inv:1.3,cap:0.064},{n:"PDG 인천 (착공)",s:"run",inv:0.98,cap:0.048},{n:"Digital Edge 부평 (일부가동)",s:"run",inv:null,cap:0.096},{n:"STT·Equinix (가동)",s:"run",inv:null,cap:0.052},{n:"NeoAI 포항 (1단계 40MW 건설)",s:"run",inv:2.0,cap:0.04},{n:"NeoAI 포항 잔여·DE 안산·Keppel·NFD 당진",s:"plan",inv:null,cap:0.52},{n:"SGC 군산 (MOU)",s:"concept",inv:null,cap:0.30}]},
+    {key:"COLO",name:"운영사·펀드",inv:{run:2.28,plan:0,concept:0},cap:{run:0.26,plan:0.12,concept:0},projs:[
+      {n:"퍼시픽 죽전 (가동)",s:"run",inv:1.3,cap:0.064},{n:"PDG 인천 (착공)",s:"run",inv:0.98,cap:0.048},{n:"Digital Edge 부평 (가동)",s:"run",inv:null,cap:0.096},{n:"STT·Equinix (가동)",s:"run",inv:null,cap:0.052},{n:"DE 안산·Keppel (인허가)",s:"plan",inv:null,cap:0.12}]},
     {key:"KAKAO",name:"카카오",inv:{run:0.4,plan:0.6,concept:0},cap:{run:0,plan:0,concept:0},projs:[
       {n:"안산 (가동)",s:"run",inv:0.4,cap:null},{n:"남양주 제2 (인허가)",s:"plan",inv:0.6,cap:null}]},
-    {key:"SAMSUNG",name:"삼성",inv:{run:0.3,plan:0.46,concept:0},cap:{run:0.04,plan:0.0624,concept:0},projs:[
-      {n:"SDS 동탄 (가동)",s:"run",inv:0.3,cap:0.04},{n:"SDS 구미 (착공)",s:"plan",inv:0.46,cap:0.06},{n:"SDS 춘천 (인허가)",s:"plan",inv:null,cap:0.0024}]},
-    {key:"LG",name:"LG",inv:{run:0.62,plan:0,concept:0},cap:{run:0.20,plan:0,concept:0},projs:[
-      {n:"U+ 파주 (건설중 · 200MW 전력 확보)",s:"run",inv:0.62,cap:0.20}]},
-    {key:"NAVER",name:"네이버",inv:{run:0,plan:0,concept:0},cap:{run:0,plan:0.20,concept:0.80},projs:[
-      {n:"AI 팩토리 (2028년 200MW · 장기 1GW)",s:"plan",inv:null,cap:0.20},{n:"장기 1GW 로드맵 잔여",s:"concept",inv:null,cap:0.80}]}
+    {key:"SAMSUNG",name:"삼성",inv:{run:0.3,plan:0.46,concept:0},cap:{run:0.04,plan:0.06,concept:0},projs:[
+      {n:"SDS 동탄 (가동)",s:"run",inv:0.3,cap:0.04},{n:"SDS 구미 (착공예정)",s:"plan",inv:0.46,cap:0.06}]},
+    {key:"LG",name:"LG",inv:{run:0.62,plan:0,concept:0},cap:{run:0,plan:0,concept:0},projs:[
+      {n:"U+ 파주 (건설중)",s:"run",inv:0.62,cap:null}]},
+    {key:"NAVER",name:"네이버",inv:{run:navInv,plan:0,concept:0},cap:{run:0.27,plan:0,concept:0},projs:[
+      {n:"각 세종 2·3단계 (착공 · 270MW×"+g+" ≈ "+navInv+"조 추정)",s:"run",inv:navInv,cap:0.27}]}
     ];
   }
   var SD = buildSD();
@@ -1968,7 +1832,7 @@ hbars("gwT1", [
       });
     });
   }
-  window.renderFig1 = function(){ SD = buildSD(); panel('figScaleInv','inv','조',[0,10,20,30]); panel('figScaleCap','cap','GW',[0,4,8,12,16]); };
+  window.renderFig1 = function(){ SD = buildSD(); panel('figScaleInv','inv','조',[0,20,40,60,80]); panel('figScaleCap','cap','GW',[0,4,8,12,16]); };
   window.renderFig1();
 })();
 
@@ -2065,10 +1929,10 @@ function renderLanding() {
   });
 }
 
-function estInvest(p){ return p.investment_krw_bil; }
-function estCap(p){ return p.capacity_mw; }
-function fmtCap(p){ var v=estCap(p); if(!isNumber(v)) return "미공개"; return v>=1000 ? (v/1000).toFixed(v>=10000?1:2)+"GW" : v+"MW"; }
-function fmtInv(p){ var v=estInvest(p); if(!isNumber(v)) return "미공개"; return v>=10000 ? (v/10000).toFixed(v%10000===0?0:1)+"조" : v.toLocaleString("ko-KR")+"억"; }
+function estInvest(p){ var c=window.chipCapex(); if(p.id==='skt-15gw-roadmap') return Math.round((15*c-7)*10000); if(p.id==='naver-sejong') return Math.round(0.27*c*10000); return p.investment_krw_bil; }
+function estCap(p){ var c=window.chipCapex(); if(p.id==='nac-haenam') return Math.round(2.5/c*1000); return p.capacity_mw; }
+function fmtCap(p){ var v=estCap(p); if(!isNumber(v)) return "미공개"; var e=(p.id==='nac-haenam')?' (추정)':''; return (v>=1000 ? (v/1000).toFixed(v>=10000?1:2)+"GW" : v+"MW")+e; }
+function fmtInv(p){ var v=estInvest(p); if(!isNumber(v)) return "미공개"; var e=(p.id==='skt-15gw-roadmap'||p.id==='naver-sejong')?' (추정)':''; return (v>=10000 ? (v/10000).toFixed(v%10000===0?0:1)+"조" : v.toLocaleString("ko-KR")+"억")+e; }
 function detailRows(key){
   const rows = projectsForDisplay(key);
   if(!rows.length) return `<div class="prow">표시할 프로젝트가 없습니다.</div>`;
@@ -2142,12 +2006,9 @@ function renderProjectCard(project, isPrimary, groupColor) {
 function aggregateFor(key) {
   const primary = DATA.projects.filter(p => p.primary_group === key);
   const isFirm = p => ["건설중","착공","가동","일부가동"].indexOf(p.status) !== -1;
-  const firmCapacity = p => p.id === "neoai-pohang"
-    ? 40
-    : (isFirm(p) ? estCap(p) : null);
   const capacityValues = primary.map(estCap).filter(isNumber);
   const investmentValues = primary.map(estInvest).filter(isNumber);
-  const capFirm = primary.map(firmCapacity).filter(isNumber);
+  const capFirm = primary.filter(isFirm).map(estCap).filter(isNumber);
   const invFirm = primary.filter(isFirm).map(estInvest).filter(isNumber);
   return {
     count: primary.length,
